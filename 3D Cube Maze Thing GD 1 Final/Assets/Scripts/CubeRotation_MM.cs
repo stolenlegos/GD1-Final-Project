@@ -16,13 +16,13 @@ public class CubeRotation_MM : MonoBehaviour
     {
       if(Input.GetKeyDown(KeyCode.LeftArrow) && playerRestriction <= 0)
       {
-        StartCoroutine(Rotate(Vector3.up, 90, 1.0f)); // forward
+        StartCoroutine(Rotate(Vector3.forward, 90, 1.0f));
         playerRestriction = 1.2f;
       }
 
       if(Input.GetKeyDown(KeyCode.RightArrow) && playerRestriction <= 0)
       {
-        StartCoroutine(Rotate(Vector3.up, -90, 1.0f)); // forward
+        StartCoroutine(Rotate(Vector3.forward, -90, 1.0f));
         playerRestriction = 1.2f;
       }
 
