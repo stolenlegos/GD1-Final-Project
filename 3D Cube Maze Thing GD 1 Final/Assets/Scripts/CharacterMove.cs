@@ -6,7 +6,7 @@ public class CharacterMove : MonoBehaviour
 {
     private Vector3 playerVelocity = Vector3.zero;
     public float speed = 10.0F;
-    public float rotateSpeed = 50.0F;
+    public float rotateSpeed = 1.0F;
     private float jumpVelocity = 0.2f;
     private float gravityValue = -1.0f;
     private bool grounded = true;
