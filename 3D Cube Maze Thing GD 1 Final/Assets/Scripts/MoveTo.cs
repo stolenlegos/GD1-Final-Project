@@ -11,13 +11,12 @@ public class MoveTo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<NavMeshAgent>().destination = goal.position;
     }
 }

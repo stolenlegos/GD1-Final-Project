@@ -14,25 +14,25 @@ public class CubeRotation_MM : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-      if(Input.GetKeyDown(KeyCode.LeftArrow) && playerRestriction <= 0)
+      if(Input.GetKeyDown(KeyCode.A) && playerRestriction <= 0) // switched to WASD to deconflict with player moves
       {
         StartCoroutine(Rotate(Vector3.forward, 90, 1.0f));
         playerRestriction = 1.2f;
       }
 
-      if(Input.GetKeyDown(KeyCode.RightArrow) && playerRestriction <= 0)
+      if(Input.GetKeyDown(KeyCode.D) && playerRestriction <= 0)
       {
         StartCoroutine(Rotate(Vector3.forward, -90, 1.0f));
         playerRestriction = 1.2f;
       }
 
-      if(Input.GetKeyDown(KeyCode.UpArrow) && playerRestriction <= 0)
+      if(Input.GetKeyDown(KeyCode.W) && playerRestriction <= 0)
       {
         StartCoroutine(Rotate(Vector3.right, 90, 1.0f));
         playerRestriction = 1.2f;
       }
 
-      if(Input.GetKeyDown(KeyCode.DownArrow) && playerRestriction <= 0)
+      if(Input.GetKeyDown(KeyCode.S) && playerRestriction <= 0)
       {
         StartCoroutine(Rotate(Vector3.right, -90, 1.0f));
         playerRestriction = 1.2f;
