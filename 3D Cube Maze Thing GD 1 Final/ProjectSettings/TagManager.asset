@@ -6,6 +6,7 @@ TagManager:
   tags:
   - portalRoomTrigger
   - portalSpot
+  - player
   layers:
   - Default
   - TransparentFX
