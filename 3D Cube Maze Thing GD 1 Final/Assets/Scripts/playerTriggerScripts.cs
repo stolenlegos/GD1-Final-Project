@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerScripts : MonoBehaviour
+public class playerTriggerScripts : MonoBehaviour
 {
     
     GameObject portalRoomUI; 
     GameObject portalSpotUI;
     public bool prtActive; 
-    public bool spotActive; 
+    public bool spotActive;
+    public Transform teleportTarget; 
+    public GameObject player; 
 
     void Start()
     {
@@ -47,4 +49,13 @@ public class playerScripts : MonoBehaviour
             portalSpotUI.SetActive(false); 
         }
     }
+
+    public void portPlayer() { 
+        player.transform.position = teleportTarget.transform.position;
+        prtActive = true; 
+        portalRoomUI.SetActive(true);
+        Rigidbody rb = player.GetComponent<Rigidbody>(); 
+        rb.useGravity = false; 
+    }
+
 }
