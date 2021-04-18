@@ -7,6 +7,7 @@ public class CharacterMove : MonoBehaviour
     private Vector3 playerVelocity = Vector3.zero;
     public float speed = 10.0F;
     public float rotateSpeed = 1.0F;
+    public bool freeze = false;
     private float jumpVelocity = 0.2f;
     private float gravityValue = -1.0f;
     private bool grounded = true;
@@ -36,6 +37,12 @@ public class CharacterMove : MonoBehaviour
             {
                 grounded = false;
             }
+        }
+
+        if (freeze)
+        {
+            playerVelocity = Vector3.zero;
+            return;
         }
 
         // Rotate around y - axis
