@@ -28,12 +28,12 @@ public class CubeRotationEdit : MonoBehaviour
     }
 
     public void turnLeft() { 
-        StartCoroutine(Rotate(Vector3.forward, 90, 1.0f));
+        StartCoroutine(Rotate(Vector3.up, 90, 1.0f)); // forward
         playerRestriction = 1.2f;
     }
 
     public void turnRight() { 
-        StartCoroutine(Rotate(Vector3.forward, -90, 1.0f));
+        StartCoroutine(Rotate(Vector3.up, -90, 1.0f)); // forward
         playerRestriction = 1.2f;
     }
 
@@ -49,7 +49,13 @@ public class CubeRotationEdit : MonoBehaviour
       Quaternion from = transform.rotation;
       Quaternion to = Quaternion.Euler(axis * angle) * transform.rotation;
 
-      float elapsed = 0.0f;
+        GameObject[] GOs = GameObject.FindGameObjectsWithTag("player");
+        for (int i = 0; i < GOs.Length; i++)
+        {
+            GOs[i].GetComponent<CharacterMove>().freeze = true;
+        }
+
+        float elapsed = 0.0f;
       while(elapsed < duration)
       {
         transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
@@ -57,15 +63,26 @@ public class CubeRotationEdit : MonoBehaviour
         yield return null;
       }
       transform.rotation = to;
+
+        for (int i = 0; i < GOs.Length; i++)
+        {
+            GOs[i].GetComponent<CharacterMove>().freeze = false;
+        }
     }
 
     IEnumerator RotateTwice(Vector3 axis1, Vector3 axis2, float angle, float duration = 1.0f)
     {
       Quaternion from = transform.rotation;
       Quaternion to = Quaternion.Euler(axis1 * angle) * transform.rotation;
-      Quaternion final = Quaternion.Euler(axis2 * angle) * transform.rotation; 
+      Quaternion final = Quaternion.Euler(axis2 * angle) * transform.rotation;
 
-      float elapsed = 0.0f;
+        GameObject[] GOs = GameObject.FindGameObjectsWithTag("player");
+        for (int i = 0; i < GOs.Length; i++)
+        {
+            GOs[i].GetComponent<CharacterMove>().freeze = true;
+        }
+
+        float elapsed = 0.0f;
       while(elapsed < duration)
       {
         transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
@@ -80,6 +97,11 @@ public class CubeRotationEdit : MonoBehaviour
         elapsed += Time.deltaTime; 
         yield return null;
       }
-      transform.rotation = final; 
+      transform.rotation = final;
+
+        for (int i = 0; i < GOs.Length; i++)
+        {
+            GOs[i].GetComponent<CharacterMove>().freeze = false;
+        }
     }
 }
