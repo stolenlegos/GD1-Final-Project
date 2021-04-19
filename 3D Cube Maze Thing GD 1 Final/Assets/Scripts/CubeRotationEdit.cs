@@ -58,28 +58,4 @@ public class CubeRotationEdit : MonoBehaviour
       }
       transform.rotation = to;
     }
-
-    IEnumerator RotateTwice(Vector3 axis1, Vector3 axis2, float angle, float duration = 1.0f)
-    {
-      Quaternion from = transform.rotation;
-      Quaternion to = Quaternion.Euler(axis1 * angle) * transform.rotation;
-      Quaternion final = Quaternion.Euler(axis2 * angle) * transform.rotation; 
-
-      float elapsed = 0.0f;
-      while(elapsed < duration)
-      {
-        transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
-        elapsed += Time.deltaTime;
-        yield return null;
-      }
-      transform.rotation = to;
-
-      elapsed = 0.0f; 
-      while(elapsed < duration) {
-        transform.rotation = Quaternion.Slerp(to, final, elapsed/duration); 
-        elapsed += Time.deltaTime; 
-        yield return null;
-      }
-      transform.rotation = final; 
-    }
 }
