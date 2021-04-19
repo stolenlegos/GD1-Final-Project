@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CubeRotationEdit : MonoBehaviour
 {
+  bool allowButton; 
   float playerRestriction;
     // Start is called before the first frame update
     void Start()
     {
-
+      allowButton = true; 
     }
 
     // Update is called once per frame
@@ -18,44 +19,48 @@ public class CubeRotationEdit : MonoBehaviour
     }
 
     public void turnDown() { 
+      if (allowButton) {
         StartCoroutine(Rotate(Vector3.right, -90, 1.0f));
         playerRestriction = 1.2f;
+        }
     }
 
-    public void turnUp() { 
+    public void turnUp() {
+      if (allowButton) { 
         StartCoroutine(Rotate(Vector3.right, 90, 1.0f));
         playerRestriction = 1.2f;
+      }
     }
 
-    public void turnLeft() { 
+    public void turnLeft() {
+      if (allowButton) { 
         StartCoroutine(Rotate(Vector3.up, 90, 1.0f)); // forward
         playerRestriction = 1.2f;
+      }
     }
 
-    public void turnRight() { 
+    public void turnRight() {
+      if (allowButton) { 
         StartCoroutine(Rotate(Vector3.up, -90, 1.0f)); // forward
         playerRestriction = 1.2f;
+      }
     }
 
-    public void dropPlayer() { 
+    public void dropPlayer() {
+      if (allowButton) { 
         turnUp();
         GameObject player = GameObject.Find("player"); 
         Rigidbody rb = player.GetComponent<Rigidbody>(); 
         rb.useGravity = true; 
+      }
     }
 
     IEnumerator Rotate(Vector3 axis, float angle, float duration = 1.0f)
     {
+      allowButton = false; 
       Quaternion from = transform.rotation;
       Quaternion to = Quaternion.Euler(axis * angle) * transform.rotation;
-
-        GameObject[] GOs = GameObject.FindGameObjectsWithTag("player");
-        for (int i = 0; i < GOs.Length; i++)
-        {
-            GOs[i].GetComponent<CharacterMove>().freeze = true;
-        }
-
-        float elapsed = 0.0f;
+      float elapsed = 0.0f;
       while(elapsed < duration)
       {
         transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
@@ -63,10 +68,6 @@ public class CubeRotationEdit : MonoBehaviour
         yield return null;
       }
       transform.rotation = to;
-
-        for (int i = 0; i < GOs.Length; i++)
-        {
-            GOs[i].GetComponent<CharacterMove>().freeze = false;
-        }
+      allowButton = true; 
     }
 }
