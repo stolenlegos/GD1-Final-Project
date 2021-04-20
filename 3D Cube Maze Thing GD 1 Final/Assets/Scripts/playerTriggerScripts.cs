@@ -52,6 +52,7 @@ public class playerTriggerScripts : MonoBehaviour
 
     public void portPlayer() { 
         player.transform.position = teleportTarget.transform.position;
+        player.transform.rotation = teleportTarget.transform.rotation; 
         prtActive = true; 
         portalRoomUI.SetActive(true);
         Rigidbody rb = player.GetComponent<Rigidbody>(); 
