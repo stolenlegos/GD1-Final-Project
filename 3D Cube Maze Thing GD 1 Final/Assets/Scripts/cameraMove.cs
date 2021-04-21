@@ -6,6 +6,7 @@ public class cameraMove : MonoBehaviour
 {
     public float rotateSpeed = 1.0F;
     bool pause = false;
+    [HideInInspector] public bool freeze = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,11 @@ public class cameraMove : MonoBehaviour
         }
 
         if (pause)
+        {
+            return;
+        }
+
+        if (freeze)
         {
             return;
         }

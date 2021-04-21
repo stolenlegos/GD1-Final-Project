@@ -851,7 +851,9 @@ MonoBehaviour:
     Mouse or Arrows to Look
 
     TFGH to
-    turn cube'
+    turn cube
+
+    P to pause mouse look'
 --- !u!222 &721444719
 CanvasRenderer:
   m_ObjectHideFlags: 0

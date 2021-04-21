@@ -7,7 +7,7 @@ public class CharacterMove : MonoBehaviour
     private Vector3 playerVelocity = Vector3.zero;
     public float speed = 10.0F;
     public float rotateSpeed = 1.0F;
-    public bool freeze = false;
+    [HideInInspector] public bool freeze = false;
     private float jumpVelocity = 0.2f;
     private float gravityValue = -1.0f;
     private bool grounded = true;
@@ -19,7 +19,7 @@ public class CharacterMove : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -30,14 +30,14 @@ public class CharacterMove : MonoBehaviour
             pause = !pause;
             if(!pause)
             {
-                Cursor.visible = false;
+                //Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
 
         if(pause)
         {
-            Cursor.visible = true;
+            //Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             return;
         }
