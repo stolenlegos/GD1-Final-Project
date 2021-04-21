@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SpawnbulletsTurret : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform Player;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class SpawnbulletsTurret : MonoBehaviour
 
         if (col.gameObject.tag == "player")
         {
-            transform.LookAt(Player);
+
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         }
@@ -34,7 +34,7 @@ public class SpawnbulletsTurret : MonoBehaviour
 
         if (col.gameObject.tag == "player")
         {
-            transform.LookAt(Player);
+
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         }
