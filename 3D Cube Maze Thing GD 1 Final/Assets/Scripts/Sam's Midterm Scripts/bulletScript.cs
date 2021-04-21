@@ -15,17 +15,17 @@ public class bulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + transform.forward * speed * Time.deltaTime; 
+        transform.position = transform.position - transform.forward * speed * Time.deltaTime; 
     }
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag == "UnbreakableWall")
+        if (col.gameObject.tag == "maze")
         {
             Destroy(gameObject);
         }
 
-        if (col.gameObject.tag == "BreakableWall")
+        if (col.gameObject.tag == "player")
         {
             Destroy(col.gameObject);
         }
