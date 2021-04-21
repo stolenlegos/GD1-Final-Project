@@ -20,7 +20,7 @@ public class bulletScript : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag == "maze")
+        if (col.gameObject.tag == "UnbreakableWall")
         {
             Destroy(gameObject);
         }
