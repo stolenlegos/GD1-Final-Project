@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class bulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position - transform.forward * speed * Time.deltaTime; 
+        transform.position = transform.position + transform.forward * speed * Time.deltaTime; 
     }
     void OnTriggerEnter(Collider col)
     {
@@ -27,7 +27,7 @@ public class bulletScript : MonoBehaviour
 
         if (col.gameObject.tag == "player")
         {
-            Destroy(col.gameObject);
+            Destroy(gameObject);
         }
     }
 }

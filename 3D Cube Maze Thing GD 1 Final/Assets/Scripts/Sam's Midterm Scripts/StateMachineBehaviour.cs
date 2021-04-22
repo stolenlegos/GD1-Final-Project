@@ -30,13 +30,20 @@ public class StateMachineBehaviour : MonoBehaviour
 
   int abort = 0;
 
+    public GameObject Player;
+
     float currentRotation = 0.0f;
 
     bool MovingRight;
 
+    Vector3 startPosition;
+
+    Quaternion startRotation;
+
     void Start()
     {
-     
+        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
     void Update()
     {
@@ -53,7 +60,7 @@ public class StateMachineBehaviour : MonoBehaviour
 
             Debug.Log("Working");
         {
-            if(hitInfo.collider.gameObject.tag != "player")
+            if(hitInfo.collider.gameObject != Player)
             {
                 wallBlocksVisibility = true;
             }
@@ -64,7 +71,7 @@ public class StateMachineBehaviour : MonoBehaviour
         Debug.DrawRay(transform.position, targetDir.normalized * player_dist_threshold, Color.red);
         Debug.DrawRay(transform.position, transform.forward * player_dist_threshold, Color.blue);
 
-        if(player_dist > player_dist_threshold)
+        if(player_dist > player_dist_threshold && angleBetween < -angleThreshold || angleBetween > angleThreshold)
         {
             Debug.Log("player is not in range");
         }
@@ -79,11 +86,11 @@ public class StateMachineBehaviour : MonoBehaviour
         {
             state = States.Search;
 
-            FrameTimer = 600;
+            FrameTimer = 6000;
 
             MovingRight = true;
         }
-        else if(state == States.Search && !player_in_cone && FrameTimer <= abort)
+        else if(state == States.Search && !player_in_cone || FrameTimer <= abort)
         {
             state = States.Idle;
         }
@@ -93,30 +100,25 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         if (state == States.Fire)
         {
+            transform.LookAt(target);
+
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            if (angleBetween < 0.0f)
-            {
-                transform.Rotate(Vector3.up, -0.01f, Space.Self);
-
-                currentRotation = currentRotation - 0.01f;
-            }
-            else
-            {
-                transform.Rotate(Vector3.up, 0.01f, Space.Self);
-
-                currentRotation = currentRotation + 1;
-            }
 
             Debug.Log("Turret is firing");
      
         }
         if(state == States.Search)
         {
-            if(MovingRight && currentRotation < angleThreshold)
+
+            FrameTimer = FrameTimer - 1;
+
+            Debug.Log("Turret is searching");
+
+            if (MovingRight && currentRotation < angleThreshold)
             {
                 transform.Rotate(Vector3.up, 0.01f, Space.Self);
 
-                currentRotation = currentRotation + 1;
+                currentRotation = currentRotation + 0.1f;
             }
             else if (MovingRight && currentRotation >= angleThreshold)
             {
@@ -126,16 +128,21 @@ public class StateMachineBehaviour : MonoBehaviour
             {
                 transform.Rotate(Vector3.up, -0.01f, Space.Self);
 
-                currentRotation = currentRotation - 1.0f;
+                currentRotation = currentRotation - 0.1f;
             }
             else
             {
                 MovingRight = true;
+
+                if (FrameTimer <= abort)
+                {
+                    gameObject.transform.position = startPosition;
+
+                    gameObject.transform.rotation = startRotation;
+                }
             }
 
-            FrameTimer = FrameTimer - 1;
 
-            Debug.Log("Turret is searching");
         }
  
     }
