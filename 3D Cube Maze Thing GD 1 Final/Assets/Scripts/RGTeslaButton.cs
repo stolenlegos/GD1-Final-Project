@@ -5,6 +5,8 @@ using UnityEngine;
 public class RGTeslaButton : MonoBehaviour
 {
   public GameObject[] RGButtons;
+  public GameObject[] GreenLightnings;
+  public GameObject[] RedLightnings;
   public bool GreenRed; //true is red false is green
   public bool inputActive;
   public bool triggerActive;
@@ -12,6 +14,8 @@ public class RGTeslaButton : MonoBehaviour
     void Start()
     {
       RGButtons = GameObject.FindGameObjectsWithTag("TeslaButtonRG");
+      GreenLightnings = GameObject.FindGameObjectsWithTag("TeslaGREEN");
+      RedLightnings = GameObject.FindGameObjectsWithTag("TeslaRED");
       GreenRed = true;
       foreach (GameObject RGButton in RGButtons)
       {
@@ -20,6 +24,45 @@ public class RGTeslaButton : MonoBehaviour
     }
 
     void Update()
+    {
+      ButtonActive();
+      stopGreen();
+      stopRed();
+    }
+
+    void stopRed()
+    {
+      if (!GreenRed)
+      {
+        foreach (GameObject RedLightning in RedLightnings)
+        {
+          RedLightning.SetActive(false);
+        }
+      } else {
+        foreach (GameObject RedLightning in RedLightnings)
+        {
+          RedLightning.SetActive(true);
+        }
+      }
+    }
+
+    void stopGreen()
+    {
+      if (GreenRed)
+      {
+        foreach (GameObject GreenLightning in GreenLightnings)
+        {
+          GreenLightning.SetActive(false);
+        }
+      } else {
+        foreach (GameObject GreenLightning in GreenLightnings)
+        {
+          GreenLightning.SetActive(true);
+        }
+      }
+    }
+
+    void ButtonActive()
     {
       if (Input.GetKeyDown(KeyCode.E) && GreenRed && triggerActive)
       {
