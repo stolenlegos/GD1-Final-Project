@@ -84,6 +84,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         else if(state == States.Fire && !player_in_cone)
         {
+            
             state = States.Search;
 
             FrameTimer = 6000;
@@ -100,6 +101,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         if (state == States.Fire)
         {
+            print(States.Fire); 
             transform.LookAt(target);
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
