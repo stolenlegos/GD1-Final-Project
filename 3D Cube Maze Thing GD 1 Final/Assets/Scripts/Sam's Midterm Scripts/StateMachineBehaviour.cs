@@ -40,6 +40,8 @@ public class StateMachineBehaviour : MonoBehaviour
 
     Quaternion startRotation; // starting rotation of turret
 
+    int shotTimer;
+
     void Start()
     {
         startPosition = transform.position;
@@ -52,6 +54,7 @@ public class StateMachineBehaviour : MonoBehaviour
         Vector3 targetDir = target.position - transform.position;
         angleBetween = Vector3.Angle(transform.forward, targetDir);
 
+        Vector3 targetPosition = new Vector3(target.position.x, this.transform.position.y, target.position.z);
 
         bool wallBlocksVisibility = false;
 
@@ -86,28 +89,41 @@ public class StateMachineBehaviour : MonoBehaviour
         {
             state = States.Search;
 
-            FrameTimer = 6000;
+            FrameTimer = 3000;
 
             MovingRight = true;
+
+            Debug.Log("Entering Search");
         }
-        else if(state == States.Search && !player_in_cone || FrameTimer <= abort)
+        else if(state == States.Search && player_in_cone)
+        {
+            state = States.Fire;
+
+            Debug.Log("Target Reacquired");
+        }
+        else if(state == States.Search && !player_in_cone && FrameTimer <= abort)
         {
             state = States.Idle;
+
+            Debug.Log("Entering Idle");
         }
        if(state == States.Idle)
         {
+            gameObject.transform.position = startPosition;
+
+            gameObject.transform.rotation = startRotation;
 
             Debug.Log("Turret is idle");
         }
        if (state == States.Fire)
         {
-            if (angleBetween > -angleThreshold || angleBetween < angleThreshold)
-            {
+            this.transform.LookAt(targetPosition);
 
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-                Debug.Log("Turret is firing");
-            }
+
+            Debug.Log("Turret is firing");
+           
         }
         if(state == States.Search)
         {
@@ -138,7 +154,10 @@ public class StateMachineBehaviour : MonoBehaviour
 
                 if (FrameTimer <= abort)
                 {
-
+             
+                    gameObject.transform.position = startPosition;
+              
+                    gameObject.transform.rotation = startRotation;
                 }
             }
 
