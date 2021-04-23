@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachineBehaviour : MonoBehaviour
+public class StateMachine2 : MonoBehaviour
 {
-   enum States
+    enum States
     {
         Idle,
 
@@ -12,33 +12,33 @@ public class StateMachineBehaviour : MonoBehaviour
 
         Search,
     }
-  States state = States.Idle; // Idle = 0, Fire = 1, Search = 2
+    States state = States.Idle; // Idle = 0, Fire = 1, Search = 2
 
-  public GameObject bulletPrefab;
+    public GameObject bulletPrefab;
 
-  public Transform target; // location of target
+    public Transform target;
 
-  public float player_dist_threshold; // length of cone
+    public float player_dist_threshold; // length of cone
 
-  public float angleThreshold; // radius of cone
+    public float angleThreshold; // radius of cone
 
-  float player_dist; // player distance from cone
+    float player_dist;
 
-  float angleBetween; // player location in or out of radius of cone
+    float angleBetween;
 
-  int FrameTimer; // countdown
+    int FrameTimer;
 
-  int abort = 0; // end of countdown
+    int abort = 0;
 
-    public GameObject Player; // target
+    public GameObject Player;
 
-    float currentRotation = 0.0f; // speed of search rotation animation
+    float currentRotation = 0.0f;
 
-    bool MovingRight; // rotation animation during search
+    bool MovingRight;
 
-    Vector3 startPosition; // starting position of turret
+    Vector3 startPosition;
 
-    Quaternion startRotation; // starting rotation of turret
+    Quaternion startRotation;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class StateMachineBehaviour : MonoBehaviour
     }
     void Update()
     {
-        player_dist = Vector3.Distance(target.position, transform.position); 
+        player_dist = Vector3.Distance(target.position, transform.position);
 
         Vector3 targetDir = target.position - transform.position;
         angleBetween = Vector3.Angle(transform.forward, targetDir);
@@ -60,7 +60,7 @@ public class StateMachineBehaviour : MonoBehaviour
 
             Debug.Log("Working");
         {
-            if(hitInfo.collider.gameObject != Player)
+            if (hitInfo.collider.gameObject != Player)
             {
                 wallBlocksVisibility = true;
             }
@@ -71,18 +71,18 @@ public class StateMachineBehaviour : MonoBehaviour
         Debug.DrawRay(transform.position, targetDir.normalized * player_dist_threshold, Color.red);
         Debug.DrawRay(transform.position, transform.forward * player_dist_threshold, Color.blue);
 
-        if(player_dist > player_dist_threshold && angleBetween < -angleThreshold || angleBetween > angleThreshold)
+        if (player_dist > player_dist_threshold && angleBetween < -angleThreshold || angleBetween > angleThreshold)
         {
             Debug.Log("player is not in range");
         }
 
-        if(state == States.Idle && player_in_cone)
+        if (state == States.Idle && player_in_cone)
         {
             state = States.Fire;
 
             Debug.Log("player in range");
         }
-        else if(state == States.Fire && !player_in_cone)
+        else if (state == States.Fire && !player_in_cone)
         {
             state = States.Search;
 
@@ -90,16 +90,16 @@ public class StateMachineBehaviour : MonoBehaviour
 
             MovingRight = true;
         }
-        else if(state == States.Search && !player_in_cone || FrameTimer <= abort)
+        else if (state == States.Search && !player_in_cone || FrameTimer <= abort)
         {
             state = States.Idle;
         }
-       if(state == States.Idle)
+        if (state == States.Idle)
         {
 
             Debug.Log("Turret is idle");
         }
-       if (state == States.Fire)
+        if (state == States.Fire)
         {
             if (angleBetween > -angleThreshold || angleBetween < angleThreshold)
             {
@@ -109,7 +109,7 @@ public class StateMachineBehaviour : MonoBehaviour
                 Debug.Log("Turret is firing");
             }
         }
-        if(state == States.Search)
+        if (state == States.Search)
         {
 
             FrameTimer = FrameTimer - 1;
@@ -144,7 +144,7 @@ public class StateMachineBehaviour : MonoBehaviour
 
 
         }
- 
+
     }
 
 }
