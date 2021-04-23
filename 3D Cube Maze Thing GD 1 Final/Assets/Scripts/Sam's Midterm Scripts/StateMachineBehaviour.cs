@@ -87,6 +87,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         else if(state == States.Fire && !player_in_cone)
         {
+            
             state = States.Search;
 
             FrameTimer = 3000;

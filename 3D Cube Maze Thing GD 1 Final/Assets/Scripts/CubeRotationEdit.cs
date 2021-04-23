@@ -6,6 +6,8 @@ public class CubeRotationEdit : MonoBehaviour
 {
   bool allowButton; 
   float playerRestriction;
+  public GameObject mainCamera;
+  public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +51,11 @@ public class CubeRotationEdit : MonoBehaviour
     public void dropPlayer() {
       if (allowButton) { 
         turnUp();
-        GameObject player = GameObject.Find("player"); 
-        Rigidbody rb = player.GetComponent<Rigidbody>(); 
-        rb.useGravity = true; 
+        player.GetComponent<CharacterMove>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true; 
+        mainCamera.GetComponent<cameraMove>().enabled = true;
+//        Rigidbody rb = player.GetComponent<Rigidbody>(); 
+//        rb.useGravity = true; 
       }
     }
 
