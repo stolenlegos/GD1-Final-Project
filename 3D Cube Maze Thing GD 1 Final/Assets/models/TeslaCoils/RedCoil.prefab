@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5762969915915974865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 841556076427809672, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 460a3014dc154b947ba16e414d89f6de, type: 2}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19827408
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19827408
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19827408
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -53.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.42196918
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9066102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -130.082
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344165394920178346, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762672975575589218, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 460a3014dc154b947ba16e414d89f6de, type: 2}
+    - target: {fileID: 3153635387521062928, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_Name
+      value: RedCoil
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153635387521062928, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346559286373080842, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_TagString
+      value: TeslaRED
+      objectReference: {fileID: 0}
+    - target: {fileID: 5855099890696064089, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 460a3014dc154b947ba16e414d89f6de, type: 2}
+    - target: {fileID: 7472660476006076811, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_TagString
+      value: TeslaRED
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504339899992096518, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
+      propertyPath: m_TagString
+      value: TeslaRED
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4929b43fdd80ff04cb27991337f04204, type: 3}
