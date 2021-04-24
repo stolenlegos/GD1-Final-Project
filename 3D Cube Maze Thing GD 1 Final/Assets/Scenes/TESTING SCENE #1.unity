@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1126,12 +1126,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'WASD to Move
 
+    LeftShift to Run
+
     Space to Jump
 
-    Mouse or Arrows to Look
+    Mouse or Arrows
+    to Look
 
-    P to
-    pause mouse look'
+    P to pause mouse look'
 --- !u!222 &721444719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1790,6 +1792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 10
   freeze: 0
+  angleThreshold: 90
 --- !u!1 &1037692085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78fda474cf64e9242b7489b46be21482, type: 3}
@@ -2073,6 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  ratio: 3
   rotateSpeed: 10
   freeze: 0
 --- !u!143 &1123868196
