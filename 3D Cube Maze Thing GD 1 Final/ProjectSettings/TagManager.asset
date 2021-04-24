@@ -8,6 +8,15 @@ TagManager:
   - portalSpot
   - player
   - maze
+  - TeslaRED
+  - TeslaGREEN
+  - TeslaButtonRG
+  - TeslaBLUE
+  - TeslaORANGE
+  - TeslaButtonBO
+  - TeslaButtonBW
+  - TeslaBLACK
+  - TeslaWHITE
   layers:
   - Default
   - TransparentFX
