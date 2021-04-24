@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 2885601494298730297}
   - component: {fileID: 2885601494298730298}
   - component: {fileID: 2327870153040180379}
+  - component: {fileID: 8007644620060875673}
+  - component: {fileID: 682968978771713816}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -189,7 +191,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RGButtons: []
+  GreenLightnings: []
+  RedLightnings: []
   GreenRed: 0
+  inputActive: 0
+  triggerActive: 0
+--- !u!114 &8007644620060875673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885601494298730290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b400bc805207849beec730f04fa839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BOButtons: []
+  BlueLightnings: []
+  OrangeLightnings: []
+  BlueOrange: 0
+  inputActive: 0
+  triggerActive: 0
+--- !u!114 &682968978771713816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885601494298730290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b2344078fc5c846be86ec0f198c434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BWButtons: []
+  BlackLightnings: []
+  WhiteLightnings: []
+  BlackWhite: 0
   inputActive: 0
   triggerActive: 0
 --- !u!1 &2885601494392302689

@@ -10,8 +10,13 @@ TagManager:
   - maze
   - TeslaRED
   - TeslaGREEN
-  - TeslaSlideRG
   - TeslaButtonRG
+  - TeslaBLUE
+  - TeslaORANGE
+  - TeslaButtonBO
+  - TeslaButtonBW
+  - TeslaBLACK
+  - TeslaWHITE
   layers:
   - Default
   - TransparentFX

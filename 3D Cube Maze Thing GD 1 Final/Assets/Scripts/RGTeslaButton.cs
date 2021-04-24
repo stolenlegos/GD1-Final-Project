@@ -19,7 +19,7 @@ public class RGTeslaButton : MonoBehaviour
       GreenRed = true;
       foreach (GameObject RGButton in RGButtons)
       {
-        RGButton.GetComponent<Renderer>().material.color = new Color (255,0,0);
+        RGButton.GetComponent<Renderer>().material.color = new Color (0.86f,0.33f,0.24f);
       }
     }
 
@@ -68,7 +68,7 @@ public class RGTeslaButton : MonoBehaviour
       {
         foreach (GameObject RGButton in RGButtons)
         {
-          RGButton.GetComponent<Renderer>().material.color = new Color (0,255,0);
+          RGButton.GetComponent<Renderer>().material.color = new Color (0.05f,0.59f,0.06f);
         }
         GreenRed = false;
       }
@@ -76,7 +76,7 @@ public class RGTeslaButton : MonoBehaviour
       {
         foreach (GameObject RGButton in RGButtons)
         {
-          RGButton.GetComponent<Renderer>().material.color = new Color (255,0,0);
+          RGButton.GetComponent<Renderer>().material.color = new Color (0.86f,0.33f,0.24f);
         }
         GreenRed = true;
       }
