@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2684,6 +2684,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78fda474cf64e9242b7489b46be21482, type: 3}
   m_PrefabInstance: {fileID: 536153462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1748622161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6845470392783818249, guid: 3075255804fa48547897ef5f29a80748, type: 3}
+  m_PrefabInstance: {fileID: 2073909416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1748622165
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748622161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7079206991683414952, guid: 3075255804fa48547897ef5f29a80748, type: 3}
 --- !u!4 &1754009786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2564190213208853326, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
@@ -2932,11 +2951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3075255804fa48547897ef5f29a80748, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.036609735
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3075255804fa48547897ef5f29a80748, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.03660973
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3075255804fa48547897ef5f29a80748, type: 3}
       propertyPath: m_LocalScale.z
@@ -2982,6 +3001,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7338577640968347797, guid: 3075255804fa48547897ef5f29a80748, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5edc9a29d6635e744816ffa8a9bd3dc1, type: 2}
     - target: {fileID: 919132149155446097, guid: 3075255804fa48547897ef5f29a80748, type: 3}
       propertyPath: m_Name
       value: redWall
@@ -3503,6 +3526,10 @@ PrefabInstance:
     - target: {fileID: 2564190213119756519, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_Name
       value: yellowWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564190213208853324, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2564190213208853327, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_Name

@@ -70,6 +70,9 @@ public class playerTriggerScripts : MonoBehaviour
             spotActive = true;
             portalSpotUI.SetActive(true); 
         }
+        if (other.name == "planeOfPain") {
+            portPlayer();
+        }
     }
     private void OnTriggerExit(Collider other) { 
         if (other.CompareTag("portalSpot")) {
