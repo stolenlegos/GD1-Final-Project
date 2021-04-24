@@ -40,7 +40,7 @@ public class StateMachineBehaviour : MonoBehaviour
 
     Quaternion startRotation; // starting rotation of turret
 
-    int shotTimer;
+    private int ShotTimer;
 
     void Start()
     {
@@ -114,15 +114,26 @@ public class StateMachineBehaviour : MonoBehaviour
 
             gameObject.transform.rotation = startRotation;
 
+            ShotTimer = 0;
+
             Debug.Log("Turret is idle");
         }
        if (state == States.Fire)
         {
             this.transform.LookAt(targetPosition);
 
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bool ShootTarget = ShotTimer <= 0;
 
+            if (ShootTarget == true)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
+                ShotTimer = 500;
+            }
+            else
+            {
+                ShotTimer = ShotTimer - 1;
+            }
             Debug.Log("Turret is firing");
            
         }
@@ -168,3 +179,5 @@ public class StateMachineBehaviour : MonoBehaviour
     }
 
 }
+
+   
