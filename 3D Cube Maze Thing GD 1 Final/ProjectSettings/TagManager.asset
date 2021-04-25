@@ -19,6 +19,7 @@ TagManager:
   - TeslaWHITE
   - MT1
   - MT2
+  - New tag
   layers:
   - Default
   - TransparentFX
