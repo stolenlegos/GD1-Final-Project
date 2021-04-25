@@ -15,9 +15,8 @@ public class MT1 : MonoBehaviour
       {
         test = true;
         player.transform.position = teleportTarget.transform.position;
-        player.transform.rotation = teleportTarget.transform.rotation; 
-        mainCamera.transform.rotation = teleportTarget.transform.rotation; 
-        mainCamera.transform.position = teleportTarget.transform.position; 
+        player.transform.rotation = teleportTarget.transform.rotation;
+        mainCamera.transform.rotation = teleportTarget.transform.rotation;
       }
     }
 
