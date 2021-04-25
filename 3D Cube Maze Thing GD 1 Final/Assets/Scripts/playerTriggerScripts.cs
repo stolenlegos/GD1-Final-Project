@@ -11,6 +11,7 @@ public class playerTriggerScripts : MonoBehaviour
     public bool prtActive; 
     public bool spotActive;
     public Transform teleportTarget; 
+    public Transform lavaTarget; 
     public GameObject player; 
     public GameObject mainCamera;
     public GameObject cubeWorld; 
@@ -70,8 +71,8 @@ public class playerTriggerScripts : MonoBehaviour
             spotActive = true;
             portalSpotUI.SetActive(true); 
         }
-        if (other.name == "planeOfPain") {
-            portPlayer();
+        if (other.name == "planeBarrier") {
+            lavaPort();
         }
     }
     private void OnTriggerExit(Collider other) { 
@@ -82,8 +83,6 @@ public class playerTriggerScripts : MonoBehaviour
     }
 
     public void portPlayer() { 
-        //Rigidbody rb = player.GetComponent<Rigidbody>(); 
-        //rb.useGravity = false; 
         player.GetComponent<CharacterMove>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false; 
         mainCamera.GetComponent<cameraMove>().enabled = false;
@@ -93,6 +92,12 @@ public class playerTriggerScripts : MonoBehaviour
         mainCamera.transform.rotation = teleportTarget.transform.rotation; 
         prtActive = true; 
         portalRoomUI.SetActive(true);
+    }
+
+        public void lavaPort() {  
+        player.transform.position = lavaTarget.transform.position;
+        player.transform.rotation = lavaTarget.transform.rotation; 
+        mainCamera.transform.rotation = lavaTarget.transform.rotation; 
     }
 
 }
