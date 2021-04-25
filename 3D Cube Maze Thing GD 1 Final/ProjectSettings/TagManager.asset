@@ -17,6 +17,8 @@ TagManager:
   - TeslaButtonBW
   - TeslaBLACK
   - TeslaWHITE
+  - MT1
+  - MT2
   layers:
   - Default
   - TransparentFX
