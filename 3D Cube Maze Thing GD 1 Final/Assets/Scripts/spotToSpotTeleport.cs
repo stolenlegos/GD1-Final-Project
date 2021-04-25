@@ -27,7 +27,6 @@ public class spotToSpotTeleport : MonoBehaviour
     }
 
     public void OnTriggerExit(Collider other) {
-        print("collision left"); 
         if (other.CompareTag("teleportSpot"))
             teleporterActive = false; 
     }

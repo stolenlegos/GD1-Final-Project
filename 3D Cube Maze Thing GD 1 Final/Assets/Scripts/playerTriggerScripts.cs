@@ -15,7 +15,6 @@ public class playerTriggerScripts : MonoBehaviour
     public GameObject player; 
     public GameObject mainCamera;
     public GameObject cubeWorld;
-    public GameObject migDestination;
 
     void Start()
     {
@@ -74,10 +73,6 @@ public class playerTriggerScripts : MonoBehaviour
         }
         if (other.name == "planeBarrier") {
             lavaPort();
-        }
-
-        if (other.CompareTag("New tag")) {
-          migPort();
         }
     }
     private void OnTriggerExit(Collider other) {
