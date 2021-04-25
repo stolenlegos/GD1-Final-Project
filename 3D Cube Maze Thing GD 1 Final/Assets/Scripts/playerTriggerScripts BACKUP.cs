@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerTriggerScripts : MonoBehaviour
+public class playerTriggerScriptsBACKUP : MonoBehaviour
 {
 
     GameObject portalRoomUI;
@@ -15,7 +15,6 @@ public class playerTriggerScripts : MonoBehaviour
     public GameObject player;
     public GameObject mainCamera;
     public GameObject cubeWorld;
-    public GameObject migDestination;
 
     void Start()
     {
@@ -75,10 +74,6 @@ public class playerTriggerScripts : MonoBehaviour
         if (other.name == "planeBarrier") {
             lavaPort();
         }
-
-        if (other.CompareTag("New tag")) {
-          migPort();
-        }
     }
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("portalSpot")) {
@@ -103,13 +98,6 @@ public class playerTriggerScripts : MonoBehaviour
         player.transform.position = lavaTarget.transform.position;
         player.transform.rotation = lavaTarget.transform.rotation;
         mainCamera.transform.rotation = lavaTarget.transform.rotation;
-    }
-
-    void migPort()
-    {
-      player.transform.position = migDestination.transform.position;
-      player.transform.rotation = migDestination.transform.rotation;
-      mainCamera.transform.rotation = migDestination.transform.rotation;
     }
 
 }
