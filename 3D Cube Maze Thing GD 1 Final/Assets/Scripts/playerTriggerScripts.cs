@@ -11,7 +11,7 @@ public class playerTriggerScripts : MonoBehaviour
     public bool prtActive; 
     public bool spotActive;
     public Transform teleportTarget; 
-    public Transform lavaTarget; 
+    public Transform lavaTarget;
     public GameObject player; 
     public GameObject mainCamera;
     public GameObject cubeWorld; 
@@ -94,10 +94,17 @@ public class playerTriggerScripts : MonoBehaviour
         portalRoomUI.SetActive(true);
     }
 
-        public void lavaPort() {  
+    public void lavaPort() {  
+        player.GetComponent<CharacterMove>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false; 
+        mainCamera.GetComponent<cameraMove>().enabled = false;
         player.transform.position = lavaTarget.transform.position;
         player.transform.rotation = lavaTarget.transform.rotation; 
         mainCamera.transform.rotation = lavaTarget.transform.rotation; 
+        player.GetComponent<CharacterMove>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true; 
+        mainCamera.GetComponent<cameraMove>().enabled = true;
     }
+
 
 }
