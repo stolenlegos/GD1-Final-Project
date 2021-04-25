@@ -10,12 +10,11 @@ public class playerTriggerScripts : MonoBehaviour
     GameObject controlsUI;
     public bool prtActive;
     public bool spotActive;
-    public Transform teleportTarget;
+    public Transform teleportTarget; 
     public Transform lavaTarget;
-    public GameObject player;
+    public GameObject player; 
     public GameObject mainCamera;
     public GameObject cubeWorld;
-    public GameObject migDestination;
 
     void Start()
     {
@@ -75,10 +74,6 @@ public class playerTriggerScripts : MonoBehaviour
         if (other.name == "planeBarrier") {
             lavaPort();
         }
-
-        if (other.CompareTag("New tag")) {
-          migPort();
-        }
     }
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("portalSpot")) {
@@ -99,17 +94,17 @@ public class playerTriggerScripts : MonoBehaviour
         portalRoomUI.SetActive(true);
     }
 
-        public void lavaPort() {
+    public void lavaPort() {  
+        player.GetComponent<CharacterMove>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false; 
+        mainCamera.GetComponent<cameraMove>().enabled = false;
         player.transform.position = lavaTarget.transform.position;
-        player.transform.rotation = lavaTarget.transform.rotation;
-        mainCamera.transform.rotation = lavaTarget.transform.rotation;
+        player.transform.rotation = lavaTarget.transform.rotation; 
+        mainCamera.transform.rotation = lavaTarget.transform.rotation; 
+        player.GetComponent<CharacterMove>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true; 
+        mainCamera.GetComponent<cameraMove>().enabled = true;
     }
 
-    void migPort()
-    {
-      player.transform.position = migDestination.transform.position;
-      player.transform.rotation = migDestination.transform.rotation;
-      mainCamera.transform.rotation = migDestination.transform.rotation;
-    }
 
 }
