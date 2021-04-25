@@ -5,6 +5,7 @@ using UnityEngine;
 public class CubeRotationEdit : MonoBehaviour
 {
   bool allowButton; 
+  bool allowFall; 
   float playerRestriction;
   public GameObject mainCamera;
   public GameObject player;
@@ -50,18 +51,14 @@ public class CubeRotationEdit : MonoBehaviour
 
     public void dropPlayer() {
       if (allowButton) { 
+        allowFall = true;
         turnUp();
-        player.GetComponent<CharacterMove>().enabled = true;
-        player.GetComponent<CharacterController>().enabled = true; 
-        mainCamera.GetComponent<cameraMove>().enabled = true;
-//        Rigidbody rb = player.GetComponent<Rigidbody>(); 
-//        rb.useGravity = true; 
       }
     }
 
     IEnumerator Rotate(Vector3 axis, float angle, float duration = 1.0f)
     {
-      allowButton = false; 
+      allowButton = false;  
       Quaternion from = transform.rotation;
       Quaternion to = Quaternion.Euler(axis * angle) * transform.rotation;
       float elapsed = 0.0f;
@@ -72,6 +69,12 @@ public class CubeRotationEdit : MonoBehaviour
         yield return null;
       }
       transform.rotation = to;
+      if (allowFall) { 
+          allowFall = false;
+          player.GetComponent<CharacterMove>().enabled = true;
+          player.GetComponent<CharacterController>().enabled = true; 
+          mainCamera.GetComponent<cameraMove>().enabled = true;
+      }
       allowButton = true; 
     }
 }

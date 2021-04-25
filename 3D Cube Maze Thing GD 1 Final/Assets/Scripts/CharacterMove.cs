@@ -6,6 +6,7 @@ public class CharacterMove : MonoBehaviour
 {
     private Vector3 playerVelocity = Vector3.zero;
     public float speed = 10.0F;
+    public float ratio = 3.0F; // ratio of run to walk speeds
     public float rotateSpeed = 1.0F;
     [HideInInspector] public bool freeze = false;
     private float jumpVelocity = 0.2f;
@@ -75,12 +76,28 @@ public class CharacterMove : MonoBehaviour
         // Move forward / backward
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
-        controller.Move(forward * curSpeed * Time.deltaTime);
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(forward * curSpeed * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(forward * curSpeed / ratio * Time.deltaTime);
+        }
+
 
         // Move left / right
         Vector3 right = transform.TransformDirection(Vector3.right);
         float curSpeedLR = speed * Input.GetAxis("Horizontal");
-        controller.Move(right * curSpeedLR * Time.deltaTime);
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(right * curSpeedLR * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(right * curSpeedLR / ratio * Time.deltaTime);
+        }
+
 
         // Apply gravity as a decrease in y velocity. But zero out fall speed if we hit the ground
         playerVelocity.y += gravityValue * Time.deltaTime;

@@ -17,6 +17,9 @@ TagManager:
   - TeslaButtonBW
   - TeslaBLACK
   - TeslaWHITE
+  - MT1
+  - MT2
+  - teleportSpot
   layers:
   - Default
   - TransparentFX
