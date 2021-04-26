@@ -57,9 +57,11 @@ public class StateMachineBehaviour : MonoBehaviour
 
         RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, targetDir.normalized, out hitInfo, targetDir.magnitude))
+        { 
+            LayerMask mask = LayerMask.GetMask("Default");
 
             Debug.Log("Working");
-        {
+        
             if(hitInfo.collider.gameObject != Player)
             {
                 wallBlocksVisibility = true;
