@@ -20,6 +20,7 @@ TagManager:
   - MT1
   - MT2
   - teleportSpot
+  - plasma
   layers:
   - Default
   - TransparentFX
