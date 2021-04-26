@@ -7,18 +7,18 @@ public class rockScripts : MonoBehaviour
 	public float moveRate = 2;
 	public float moveTimer;
     float resetTimer;
-	public float moveSpeed;
+	public float moveSpeed = 0.05f;
     void Start()
     {
         resetTimer = moveTimer; 
     }
-    void FixedUpdate()
+    void Update()
     {
 		moveTimer -= Time.deltaTime;
 		if (moveTimer < 0) {
 			moveSpeed = moveSpeed * -1;
 			moveTimer = resetTimer;
 		}
-		transform.Rotate(0, moveSpeed, 0);
+		transform.Translate(moveSpeed, 0, 0);
     }
 }

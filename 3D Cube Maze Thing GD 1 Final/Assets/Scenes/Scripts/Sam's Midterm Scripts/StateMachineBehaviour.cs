@@ -36,12 +36,15 @@ public class StateMachineBehaviour : MonoBehaviour
 
     bool MovingRight; // rotation animation during search
 
+    Vector3 startPosition; // starting position of turret
+
     Quaternion startRotation; // starting rotation of turret
 
     private int ShotTimer;
 
     void Start()
     {
+        startPosition = transform.position;
         startRotation = transform.rotation;
     }
     void Update()
@@ -107,6 +110,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
        if(state == States.Idle)
         {
+            gameObject.transform.position = startPosition;
 
             gameObject.transform.rotation = startRotation;
 
@@ -162,6 +166,8 @@ public class StateMachineBehaviour : MonoBehaviour
 
                 if (FrameTimer <= abort)
                 {
+             
+                    gameObject.transform.position = startPosition;
               
                     gameObject.transform.rotation = startRotation;
                 }
