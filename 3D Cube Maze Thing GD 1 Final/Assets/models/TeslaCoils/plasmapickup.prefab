@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7995442322415988444}
   - component: {fileID: 5265116054264896022}
   - component: {fileID: 6832214097938400912}
-  - component: {fileID: 3943775012643715657}
+  - component: {fileID: 7805600342376183047}
   m_Layer: 0
   m_Name: plasmapickup
   m_TagString: plasma
@@ -97,7 +97,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: 7c8533b7b7311fc4a84e5bb174facb57, type: 3}
---- !u!114 &3943775012643715657
+--- !u!114 &7805600342376183047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,6 +106,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5913665393381473219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ebfa59c109d4043aeedff6ec3f3fde, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b72348fb206e4af2aaffc8e38f4f145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -9,18 +9,26 @@ public class plasmaGrab : MonoBehaviour
   public GameObject blockTwo;
   public GameObject blockThree;
   bool blockOneExist = true;
-    // Start is called before the first frame update
-    void Start()
-    {
+  bool blockTwoExist = true;
+  bool blockThreeExist = true;
 
-    }
-
-    // Update is called once per frame
     void Update() {
       if (plasma >= 2 && blockOneExist) {
         Destroy(blockOne);
         plasma -= 2;
         blockOneExist = false;
+      }
+
+      if (plasma >= 4 && blockTwoExist) {
+        Destroy(blockTwo);
+        plasma -= 4;
+        blockTwoExist = false;
+      }
+
+      if (plasma >= 8 && blockThreeExist) {
+        Destroy(blockThree);
+        plasma -= 8;
+        blockThreeExist = false;
       }
     }
 
