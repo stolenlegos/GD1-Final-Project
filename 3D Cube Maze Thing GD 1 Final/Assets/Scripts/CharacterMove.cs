@@ -40,7 +40,7 @@ public class CharacterMove : MonoBehaviour
         {
             //Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            return;
+            //return;
         }
 
         //Cursor.visible = false;
@@ -70,8 +70,11 @@ public class CharacterMove : MonoBehaviour
         }
 
         // Rotate around y - axis
-        gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
-        gameObject.transform.Rotate(0, Input.GetAxis("LeftRight") * rotateSpeed/10, 0);
+        if (!pause)
+        {
+            gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
+            gameObject.transform.Rotate(0, Input.GetAxis("LeftRight") * rotateSpeed / 10, 0);
+        }
 
         // Move forward / backward
         Vector3 forward = transform.TransformDirection(Vector3.forward);

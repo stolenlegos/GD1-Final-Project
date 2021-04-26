@@ -72,7 +72,8 @@ public class CubeRotationEdit : MonoBehaviour
       if (allowFall) { 
           allowFall = false;
           player.GetComponent<CharacterMove>().enabled = true;
-          player.GetComponent<CharacterController>().enabled = true; 
+          player.GetComponent<CharacterController>().enabled = true;
+          player.GetComponent<SC_MovingPlatform>().enabled = true;
           mainCamera.GetComponent<cameraMove>().enabled = true;
       }
       allowButton = true; 
