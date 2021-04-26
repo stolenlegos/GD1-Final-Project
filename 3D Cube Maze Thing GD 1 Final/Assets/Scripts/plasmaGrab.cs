@@ -8,9 +8,11 @@ public class plasmaGrab : MonoBehaviour
   public GameObject blockOne;
   public GameObject blockTwo;
   public GameObject blockThree;
+  public GameObject blockFour;
   bool blockOneExist = true;
   bool blockTwoExist = true;
   bool blockThreeExist = true;
+  bool blockFourExist = true;
 
     void Update() {
       if (plasma >= 2 && blockOneExist) {
@@ -29,6 +31,12 @@ public class plasmaGrab : MonoBehaviour
         Destroy(blockThree);
         plasma -= 8;
         blockThreeExist = false;
+      }
+
+      if (plasma >= 15 && blockFourExist){
+        Destroy(blockFour);
+        plasma -= 15;
+        blockFourExist = false;
       }
     }
 
