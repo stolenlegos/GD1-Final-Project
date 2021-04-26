@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 655067752976558470}
   - component: {fileID: 8179458748682607334}
   m_Layer: 0
-  m_Name: StaticConeTurret
+  m_Name: BigTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
