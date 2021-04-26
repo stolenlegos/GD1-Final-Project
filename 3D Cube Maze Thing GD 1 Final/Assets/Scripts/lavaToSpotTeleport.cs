@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class lavaToSpotTeleport : MonoBehaviour
 {
-    // Start is called before the first frame update 
     public Transform lavaTarget;
     public GameObject player;
     public GameObject mainCamera; 
