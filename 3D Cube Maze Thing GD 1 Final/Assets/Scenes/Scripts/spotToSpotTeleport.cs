@@ -34,12 +34,14 @@ public class spotToSpotTeleport : MonoBehaviour
     public void teleport() {
         player.GetComponent<CharacterMove>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<SC_MovingPlatform>().enabled = false; 
         mainCamera.GetComponent<cameraMove>().enabled = false;
         player.transform.position = destination.transform.position;
         player.transform.rotation = destination.transform.rotation;
         mainCamera.transform.rotation = destination.transform.rotation;
         player.GetComponent<CharacterMove>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<SC_MovingPlatform>().enabled = true; 
         mainCamera.GetComponent<cameraMove>().enabled = true;
     }
 }

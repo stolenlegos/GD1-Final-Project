@@ -23,19 +23,24 @@ public class lavaToSpotTeleport : MonoBehaviour
     }
 
     public void OnTriggerExit(Collider other) {
-        if (other.CompareTag("teleportSpot"))
+        if (other.CompareTag("teleportSpot")) {
             teleporterActive = false; 
+            if(!player.GetComponent<SC_MovingPlatform>().enabled)
+                player.GetComponent<SC_MovingPlatform>().enabled = true;
+        }
     }
 
     public void lavaPort() {  
         player.GetComponent<CharacterMove>().enabled = false;
-        player.GetComponent<CharacterController>().enabled = false; 
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<SC_MovingPlatform>().enabled = false;  
         mainCamera.GetComponent<cameraMove>().enabled = false;
         player.transform.position = lavaTarget.transform.position;
         player.transform.rotation = lavaTarget.transform.rotation; 
         mainCamera.transform.rotation = lavaTarget.transform.rotation; 
         player.GetComponent<CharacterMove>().enabled = true;
-        player.GetComponent<CharacterController>().enabled = true; 
+        player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<SC_MovingPlatform>().enabled = true;  
         mainCamera.GetComponent<cameraMove>().enabled = true;
     }
 }
