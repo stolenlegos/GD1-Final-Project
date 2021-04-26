@@ -33,11 +33,6 @@ public class cameraMove : MonoBehaviour
             pause = !pause;
         }
 
-        if (pause)
-        {
-            return;
-        }
-
         if (freeze)
         {
             return;
@@ -73,8 +68,11 @@ public class cameraMove : MonoBehaviour
 
         else
         {
-            gameObject.transform.Rotate(Input.GetAxis("Mouse Y") * rotateSpeed * -1, 0, 0);
-            gameObject.transform.Rotate(Input.GetAxis("FwdBack") * rotateSpeed / 10 * -1, 0, 0);
+            if(!pause)
+            {
+                gameObject.transform.Rotate(Input.GetAxis("Mouse Y") * rotateSpeed * -1, 0, 0);
+                gameObject.transform.Rotate(Input.GetAxis("FwdBack") * rotateSpeed / 10 * -1, 0, 0);
+            }
         }
 
         //lastRotation = gameObject.transform.rotation;

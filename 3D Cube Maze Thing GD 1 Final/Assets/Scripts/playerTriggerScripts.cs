@@ -85,6 +85,7 @@ public class playerTriggerScripts : MonoBehaviour
     public void portPlayer() {
         player.GetComponent<CharacterMove>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<SC_MovingPlatform>().enabled = false;
         mainCamera.GetComponent<cameraMove>().enabled = false;
         controlsUI.SetActive(false);
         player.transform.position = teleportTarget.transform.position;
