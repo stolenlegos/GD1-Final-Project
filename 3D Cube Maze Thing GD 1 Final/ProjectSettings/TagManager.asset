@@ -20,8 +20,11 @@ TagManager:
   - MT1
   - MT2
   - teleportSpot
+<<<<<<< HEAD
   - Destroyer
   - plasma
+=======
+>>>>>>> parent of c3d6811 (Merge branch 'main' of https://github.com/stolenlegos/GD1-Final-Project into main)
   layers:
   - Default
   - TransparentFX

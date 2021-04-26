@@ -9,7 +9,7 @@ public class BWTeslaButton : MonoBehaviour
   public GameObject[] WhiteLightnings;
   public bool BlackWhite; //true is black false is White
   public bool inputActive;
-  public bool BWtriggerActive;
+  public bool triggerActive;
 
     void Start()
     {
@@ -30,54 +30,71 @@ public class BWTeslaButton : MonoBehaviour
       stopWhite();
     }
 
-    void stopWhite() {
-      if (BlackWhite) {
-        foreach (GameObject WhiteLightning in WhiteLightnings) {
+    void stopWhite()
+    {
+      if (BlackWhite)
+      {
+        foreach (GameObject WhiteLightning in WhiteLightnings)
+        {
           WhiteLightning.SetActive(false);
         }
       } else {
-        foreach (GameObject WhiteLightning in WhiteLightnings) {
+        foreach (GameObject WhiteLightning in WhiteLightnings)
+        {
           WhiteLightning.SetActive(true);
         }
       }
     }
 
-    void stopBlack() {
-      if (!BlackWhite) {
-        foreach (GameObject BlackLightning in BlackLightnings) {
+    void stopBlack()
+    {
+      if (!BlackWhite)
+      {
+        foreach (GameObject BlackLightning in BlackLightnings)
+        {
           BlackLightning.SetActive(false);
         }
       } else {
-        foreach (GameObject BlackLightning in BlackLightnings) {
+        foreach (GameObject BlackLightning in BlackLightnings)
+        {
           BlackLightning.SetActive(true);
         }
       }
     }
 
-    void ButtonActive() {
-      if (Input.GetKeyDown(KeyCode.E) && BlackWhite && BWtriggerActive) {
-        foreach (GameObject BWButton in BWButtons) {
+    void ButtonActive()
+    {
+      if (Input.GetKeyDown(KeyCode.E) && BlackWhite && triggerActive)
+      {
+        foreach (GameObject BWButton in BWButtons)
+        {
           BWButton.GetComponent<Renderer>().material.color = new Color (1,1,1);
         }
         BlackWhite = false;
       }
-      else if (Input.GetKeyDown(KeyCode.E) && !BlackWhite && BWtriggerActive) {
-        foreach (GameObject BWButton in BWButtons) {
+      else if (Input.GetKeyDown(KeyCode.E) && !BlackWhite && triggerActive)
+      {
+        foreach (GameObject BWButton in BWButtons)
+        {
           BWButton.GetComponent<Renderer>().material.color = new Color (0,0,0);
         }
         BlackWhite = true;
       }
     }
 
-    void OnTriggerEnter(Collider other) {
-      if (other.tag == "TeslaButtonBW") {
-        BWtriggerActive = true;
+    void OnTriggerEnter(Collider other)
+    {
+      if (other.tag == "TeslaButtonBW")
+      {
+        triggerActive = true;
       }
     }
 
-    void OnTriggerExit(Collider other) {
-      if (other.tag == "TeslaButtonBW") {
-        BWtriggerActive = false;
+    void OnTriggerExit(Collider other)
+    {
+      if (other.tag == "TeslaButtonBW")
+      {
+        triggerActive = false;
       }
     }
 }
