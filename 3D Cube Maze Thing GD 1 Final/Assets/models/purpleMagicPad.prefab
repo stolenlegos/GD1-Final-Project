@@ -106,9 +106,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4811488420507500115}
   - component: {fileID: 8208459232673366047}
+  - component: {fileID: 7732014829707113478}
   m_Layer: 0
   m_Name: purpleMagicPad
-  m_TagString: Untagged
+  m_TagString: teleportSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +144,21 @@ CapsuleCollider:
   m_Height: 1.84
   m_Direction: 1
   m_Center: {x: 0, y: -1, z: 0}
+--- !u!114 &7732014829707113478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556472793089524009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6052f32c9a6ac6248a9c3effdb756679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  player: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!64 &8532859542105730681
 MeshCollider:
   m_ObjectHideFlags: 0
