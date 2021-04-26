@@ -71,9 +71,9 @@ public class playerTriggerScripts : MonoBehaviour
             spotActive = true;
             portalSpotUI.SetActive(true);
         }
-        if (other.name == "planeBarrier") {
-            lavaPort();
-        }
+        //if (other.name == "planeBarrier") {
+        //    lavaPort();
+        //}
     }
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("portalSpot")) {
@@ -94,7 +94,7 @@ public class playerTriggerScripts : MonoBehaviour
         portalRoomUI.SetActive(true);
     }
 
-    public void lavaPort() {  
+    /*public void lavaPort() {  
         player.GetComponent<CharacterMove>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false; 
         mainCamera.GetComponent<cameraMove>().enabled = false;
@@ -104,7 +104,7 @@ public class playerTriggerScripts : MonoBehaviour
         player.GetComponent<CharacterMove>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true; 
         mainCamera.GetComponent<cameraMove>().enabled = true;
-    }
+    }*/
 
 
 }
