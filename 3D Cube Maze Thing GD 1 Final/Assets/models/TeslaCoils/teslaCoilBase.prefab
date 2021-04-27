@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 3548654897500425236}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,8 +338,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.569764, y: 4.5697637, z: 10.134344}
-  m_Center: {x: 0.0003964901, y: 0.00029635426, z: -1.0924948}
+  m_Size: {x: 4.569764, y: 4.5697637, z: 46.155724}
+  m_Center: {x: 0.0003977655, y: 0.00029816618, z: 16.918077}
 --- !u!1 &3153635387521062928
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2344165394920178346}
   m_Layer: 0
-  m_Name: teslaCoilReal
+  m_Name: teslaCoilBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,8 +554,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3331329, y: 4.4442945, z: 1}
+  m_Center: {x: -0.16656558, y: 1.7221386, z: -0.000000115530675}
 --- !u!1 &5847311337831138418
 GameObject:
   m_ObjectHideFlags: 0
