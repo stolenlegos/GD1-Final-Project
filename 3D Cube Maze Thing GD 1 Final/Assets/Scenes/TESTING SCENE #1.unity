@@ -1588,7 +1588,7 @@ PrefabInstance:
       objectReference: {fileID: 848591863}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: angleThreshold
-      value: 360
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: framesBetweenShots
@@ -1596,7 +1596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: player_dist_threshold
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320179, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_Name
@@ -5881,7 +5881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: angleThreshold
-      value: 360
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: framesBetweenShots
@@ -5889,7 +5889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: player_dist_threshold
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320179, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_Name

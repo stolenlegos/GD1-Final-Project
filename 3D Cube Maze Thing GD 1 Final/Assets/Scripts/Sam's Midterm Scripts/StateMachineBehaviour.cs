@@ -50,9 +50,13 @@ public class StateMachineBehaviour : MonoBehaviour
 
     private int ShotTimer;
 
+    bool ResetPosition;
+
     void Start()
     {
         startRotation = transform.rotation;
+
+        ResetPosition = false;
     }
     void Update()
     {
@@ -164,9 +168,15 @@ public class StateMachineBehaviour : MonoBehaviour
         }
        if(state == States.Idle)
         {
-            gameObject.transform.rotation = startRotation;
-
             ShotTimer = 0;
+
+            if(ResetPosition == true)
+            {
+                gameObject.transform.rotation = startRotation;
+
+                ResetPosition = false;
+            }
+
             if (debugFlag2)
             {
                 Debug.Log("Turret is idle");
@@ -196,6 +206,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         if(state == States.Search)
         {
+            ResetPosition = true;
 
             FrameTimer = FrameTimer - 1;
             if (debugFlag2)
@@ -225,7 +236,7 @@ public class StateMachineBehaviour : MonoBehaviour
 
                 if (FrameTimer <= abort)
                 {
-                    gameObject.transform.rotation = startRotation;
+
                 }
             }
 
