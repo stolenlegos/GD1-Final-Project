@@ -14,6 +14,8 @@ public class StateMachineBehaviour : MonoBehaviour
     }
   States state = States.Idle; // Idle = 0, Fire = 1, Search = 2
 
+  bool wallBlocksVisibility = false;
+
   public GameObject bulletPrefab;
 
   public Transform target; // location of target
@@ -21,6 +23,14 @@ public class StateMachineBehaviour : MonoBehaviour
   public float player_dist_threshold; // length of cone
 
   public float angleThreshold; // radius of cone
+
+  public int framesBetweenShots = 10;
+
+  int framesBlocked = 0;
+
+  public bool debugFlag = false;
+
+  public bool debugFlag2 = false;
 
   float player_dist; // player distance from cone
 
@@ -53,69 +63,114 @@ public class StateMachineBehaviour : MonoBehaviour
 
         Vector3 targetPosition = new Vector3(target.position.x, this.transform.position.y, target.position.z);
 
-        bool wallBlocksVisibility = false;
+        //RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, targetDir.normalized, out RaycastHit hitInfo, targetDir.magnitude))
+        {
 
-        RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, targetDir.normalized, out hitInfo, targetDir.magnitude))
-        { 
+            if(debugFlag)
+            {
+                Debug.Log("RaycastHit " + hitInfo);
+            }
+
             LayerMask mask = LayerMask.GetMask("Default");
-
-            Debug.Log("Working");
+            if (debugFlag2)
+            {
+                Debug.Log("Working");
+            }
         
             if(hitInfo.collider.gameObject != Player)
             {
-                wallBlocksVisibility = true;
 
-                Debug.Log("TURRET BREAKS");
+                //if (!wallBlocksVisibility)
+                //{
+                    //framesBlocked = 0;
+                //}
+                //else
+                //{
+                    framesBlocked += 1;
+                    if (framesBlocked >= 300)
+                    {
+                        wallBlocksVisibility = true;
+                        framesBlocked = 0;
+                        if (debugFlag)
+                        {
+                            Debug.Log("TURRET BREAKS");
+                        }
+                    }
+                //}
+
+            }
+            else
+            {
+                wallBlocksVisibility = false;
             }
         }
 
         bool player_in_cone = player_dist <= player_dist_threshold && angleBetween >= -angleThreshold && angleBetween <= angleThreshold && !wallBlocksVisibility;
+
+        if(debugFlag)
+        {
+            Debug.Log("is player in cone? " + player_in_cone +  " " + player_dist + " " + angleBetween);
+        }    
 
         Debug.DrawRay(transform.position, targetDir.normalized * player_dist_threshold, Color.red);
         Debug.DrawRay(transform.position, transform.forward * player_dist_threshold, Color.blue);
 
         if(player_dist > player_dist_threshold && angleBetween < -angleThreshold || angleBetween > angleThreshold)
         {
-            Debug.Log("player is not in range");
+            if(debugFlag2)
+            {
+                Debug.Log("player is not in range");
+            }
+
         }
 
         if(state == States.Idle && player_in_cone)
         {
             state = States.Fire;
-
-            Debug.Log("player in range");
+            if (debugFlag2)
+            {
+                Debug.Log("player in range");
+            }
         }
         else if(state == States.Fire && !player_in_cone)
         {
             
             state = States.Search;
 
-            FrameTimer = 3000;
+            FrameTimer = 300;
 
             MovingRight = true;
-
-            Debug.Log("Entering Search");
+            if (debugFlag2)
+            {
+                Debug.Log("Entering Search");
+            }
         }
         else if(state == States.Search && player_in_cone)
         {
             state = States.Fire;
-
-            Debug.Log("Target Reacquired");
+            if (debugFlag2)
+            {
+                Debug.Log("Target Reacquired");
+            }
         }
         else if(state == States.Search && !player_in_cone && FrameTimer <= abort)
         {
             state = States.Idle;
-
-            Debug.Log("Entering Idle");
+            if (debugFlag2)
+            {
+                Debug.Log("Entering Idle");
+            }
         }
        if(state == States.Idle)
         {
             gameObject.transform.rotation = startRotation;
 
             ShotTimer = 0;
-
-            Debug.Log("Turret is idle");
+            if (debugFlag2)
+            {
+                Debug.Log("Turret is idle");
+            }
         }
        if (state == States.Fire)
         {
@@ -127,21 +182,26 @@ public class StateMachineBehaviour : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-                ShotTimer = 500;
+                ShotTimer = framesBetweenShots; // 10;
             }
             else
             {
                 ShotTimer = ShotTimer - 1;
             }
-            Debug.Log("Turret is firing");
+            if (debugFlag2)
+            {
+                Debug.Log("Turret is firing");
+            }
            
         }
         if(state == States.Search)
         {
 
             FrameTimer = FrameTimer - 1;
-
-            Debug.Log("Turret is searching");
+            if (debugFlag2)
+            {
+                Debug.Log("Turret is searching");
+            }
 
             if (MovingRight && currentRotation < angleThreshold)
             {

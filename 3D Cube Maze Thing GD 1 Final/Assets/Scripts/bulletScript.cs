@@ -17,16 +17,26 @@ public class bulletScript : MonoBehaviour
     {
         transform.position = transform.position + transform.forward * speed * Time.deltaTime; 
     }
-    void OnTriggerEnter(Collider col)
+
+    public void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag == "maze")
+        if (col.gameObject.CompareTag("maze"))
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
+            col.gameObject.GetComponent<CharacterMove>().enabled = false;
+            col.gameObject.GetComponent<CharacterController>().enabled = false;
+            col.gameObject.GetComponent<SC_MovingPlatform>().enabled = false;
+            //mainCamera.GetComponent<cameraMove>().enabled = false;
+            //controlsUI.SetActive(false);
+            col.transform.position = col.gameObject.GetComponent<playerTriggerScripts>().spotCoordinates;
+            col.gameObject.GetComponent<CharacterMove>().enabled = true;
+            col.gameObject.GetComponent<CharacterController>().enabled = true;
+            col.gameObject.GetComponent<SC_MovingPlatform>().enabled = true;
         }
 
     }

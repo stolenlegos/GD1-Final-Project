@@ -15,6 +15,7 @@ public class playerTriggerScripts : MonoBehaviour
     public GameObject player; 
     public GameObject mainCamera;
     public GameObject cubeWorld;
+    [HideInInspector] public Vector3 spotCoordinates;
 
     void Start()
     {
@@ -70,6 +71,7 @@ public class playerTriggerScripts : MonoBehaviour
         if (other.CompareTag("portalSpot")) {
             spotActive = true;
             portalSpotUI.SetActive(true);
+            spotCoordinates = gameObject.transform.position;
         }
         //if (other.name == "planeBarrier") {
         //    lavaPort();
