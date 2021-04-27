@@ -127,7 +127,7 @@ public class StateMachineBehaviour : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-                ShotTimer = 10;
+                ShotTimer = 500;
             }
             else
             {
