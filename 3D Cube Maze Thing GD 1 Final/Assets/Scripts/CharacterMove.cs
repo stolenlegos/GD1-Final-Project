@@ -9,8 +9,9 @@ public class CharacterMove : MonoBehaviour
     public float ratio = 3.0F; // ratio of run to walk speeds
     public float rotateSpeed = 1.0F;
     [HideInInspector] public bool freeze = false;
-    private float jumpVelocity = 0.4f;
-    private float gravityValue = -1.0f;
+    private float jumpVelocity = 10.0F;
+    //[HideInInspector] public float gravityValue = -1000.0F;
+    private float gravityValue = -40.0F;
     private bool grounded = true;
     private int framesInAir = 0;
     bool pause = false;
@@ -51,13 +52,16 @@ public class CharacterMove : MonoBehaviour
         // fix this by "filtering" the value: only believe we're in the air if it says so 3 times in a row
         if (controller.isGrounded)
         {
+            Debug.Log("Grounded: True");
             framesInAir = 0;
             grounded = true;
         }
         else
         {
             framesInAir += 1;
-            if (framesInAir >= 5)
+            Debug.Log("Grounded: False (" + framesInAir + " frames)");
+
+            if (framesInAir > 25)
             {
                 grounded = false;
             }
@@ -103,6 +107,7 @@ public class CharacterMove : MonoBehaviour
 
 
         // Apply gravity as a decrease in y velocity. But zero out fall speed if we hit the ground
+        Vector3 down = transform.TransformDirection(Vector3.down);
         playerVelocity.y += gravityValue * Time.deltaTime;
         if (grounded && playerVelocity.y < 0)
         {
@@ -122,8 +127,10 @@ public class CharacterMove : MonoBehaviour
             // Debug.Log("Is button down? " + Input.GetButtonDown("Jump"));
             // Debug.Log("Is player grounded? " + grounded);
         }
-        // Debug.Log("Current Y velocity:" + playerVelocity.y);
+        Debug.Log("Current Y velocity:" + playerVelocity.y + "Gravity value " + gravityValue + "TimeDelta " + Time.deltaTime);
 
-        controller.Move(playerVelocity);
+        controller.Move(playerVelocity * Time.deltaTime);
+
+        //Debug.Log("Gravity " + gravityValue + "Speed " + speed);
     }
 }
