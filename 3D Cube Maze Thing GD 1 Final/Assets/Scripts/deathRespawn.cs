@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deathRespawn : MonoBehaviour
+public class lavaToSpotTeleport : MonoBehaviour
 {
-    public Transform respawnTarget;
+    public Transform lavaTarget;
     public GameObject player;
     public GameObject mainCamera; 
     private bool teleporterActive;   
@@ -12,7 +12,7 @@ public class deathRespawn : MonoBehaviour
     
     void Update() {
         if (teleporterActive) { 
-            Respawn(); 
+            lavaPort(); 
         }
     }
     
@@ -27,13 +27,13 @@ public class deathRespawn : MonoBehaviour
             teleporterActive = false; 
     }
 
-    public void Respawn() {  
+    public void lavaPort() {  
         player.GetComponent<CharacterMove>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false; 
         mainCamera.GetComponent<cameraMove>().enabled = false;
-        player.transform.position = respawnTarget.transform.position;
-        player.transform.rotation = respawnTarget.transform.rotation; 
-        mainCamera.transform.rotation = respawnTarget.transform.rotation; 
+        player.transform.position = lavaTarget.transform.position;
+        player.transform.rotation = lavaTarget.transform.rotation; 
+        mainCamera.transform.rotation = lavaTarget.transform.rotation; 
         player.GetComponent<CharacterMove>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true; 
         mainCamera.GetComponent<cameraMove>().enabled = true;
