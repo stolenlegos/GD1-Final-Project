@@ -570,7 +570,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 375616e312c73e845bcb8f46a634366c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -772,7 +772,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 375616e312c73e845bcb8f46a634366c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1490,6 +1490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 509119977}
     m_Modifications:
+    - target: {fileID: 194118626093630634, guid: 80137720db91df04098aceff07f9620e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 3075255804fa48547897ef5f29a80748, type: 3}
     - target: {fileID: 5687355155193650452, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1555,8 +1559,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 848591863}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
+      propertyPath: angleThreshold
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: player_dist_threshold
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320179, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_Name
@@ -2095,7 +2103,7 @@ MonoBehaviour:
 
     P to pause mouse look
 
-    (press e while on Mig''s portals to teleport)'
+    E to perform an action'
 --- !u!222 &721444719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2190,7 +2198,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 375616e312c73e845bcb8f46a634366c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5580,6 +5588,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 509119977}
     m_Modifications:
+    - target: {fileID: 194118626093630634, guid: 80137720db91df04098aceff07f9620e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 3075255804fa48547897ef5f29a80748, type: 3}
+    - target: {fileID: 3703674793463033554, guid: 80137720db91df04098aceff07f9620e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5687355155193650452, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5645,8 +5661,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 848591863}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
+      propertyPath: angleThreshold
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: player_dist_threshold
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320179, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: m_Name
@@ -6800,7 +6820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3793878269743509169}
   m_LocalRotation: {x: -0, y: -0.43992665, z: -0, w: 0.89803374}
-  m_LocalPosition: {x: 2.8100002, y: 0.20199871, z: -2.3320005}
+  m_LocalPosition: {x: 2.8100002, y: 0.0945, z: -2.3320005}
   m_LocalScale: {x: 0.28782824, y: 0.2878282, z: 0.28782824}
   m_Children:
   - {fileID: 4982624177009889970}
@@ -7165,11 +7185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70710677
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7181,15 +7201,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927031, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_Name
@@ -7202,6 +7222,10 @@ PrefabInstance:
     - target: {fileID: 2564190213119756519, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_Name
       value: yellowWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564190213119756519, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+      propertyPath: m_TagString
+      value: maze
       objectReference: {fileID: 0}
     - target: {fileID: 2564190213208853324, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_Enabled
@@ -7238,6 +7262,10 @@ PrefabInstance:
     - target: {fileID: 6065999088253089028, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730845251541406746, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+      propertyPath: m_TagString
+      value: maze
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
@@ -7341,6 +7369,7 @@ MonoBehaviour:
   target: {fileID: 848591863}
   player_dist_threshold: 10
   angleThreshold: 45
+  framesBetweenShots: 10
   Player: {fileID: 848591862}
 --- !u!23 &4067668311614253638
 MeshRenderer:
