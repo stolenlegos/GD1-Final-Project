@@ -114,10 +114,11 @@ public class CharacterMove : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             playerVelocity.y += jumpVelocity;
-            // Debug.Log("Jump!");
+            //Debug.Log("Jump!");
         }
         else
         {
+            //Debug.Log("No Jump.");
             // Debug.Log("Is button down? " + Input.GetButtonDown("Jump"));
             // Debug.Log("Is player grounded? " + grounded);
         }

@@ -5713,7 +5713,7 @@ PrefabInstance:
       objectReference: {fileID: 848591863}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: debugFlag
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8987596030377320176, guid: 80137720db91df04098aceff07f9620e, type: 3}
       propertyPath: angleThreshold
