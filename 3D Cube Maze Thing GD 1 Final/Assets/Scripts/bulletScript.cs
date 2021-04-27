@@ -26,7 +26,16 @@ public class bulletScript : MonoBehaviour
         }
         if (col.gameObject.tag == "Player")
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
+            col.GetComponent<CharacterMove>().enabled = false;
+            col.GetComponent<CharacterController>().enabled = false;
+            col.GetComponent<SC_MovingPlatform>().enabled = false;
+            //mainCamera.GetComponent<cameraMove>().enabled = false;
+            //controlsUI.SetActive(false);
+            col.transform.position = col.GetComponent<playerTriggerScripts>().spotCoordinates;
+            col.GetComponent<CharacterMove>().enabled = true;
+            col.GetComponent<CharacterController>().enabled = true;
+            col.GetComponent<SC_MovingPlatform>().enabled = true;
         }
 
     }

@@ -9,7 +9,7 @@ public class CharacterMove : MonoBehaviour
     public float ratio = 3.0F; // ratio of run to walk speeds
     public float rotateSpeed = 1.0F;
     [HideInInspector] public bool freeze = false;
-    private float jumpVelocity = 0.2f;
+    private float jumpVelocity = 0.4f;
     private float gravityValue = -1.0f;
     private bool grounded = true;
     private int framesInAir = 0;
@@ -57,7 +57,7 @@ public class CharacterMove : MonoBehaviour
         else
         {
             framesInAir += 1;
-            if (framesInAir >= 4)
+            if (framesInAir >= 5)
             {
                 grounded = false;
             }

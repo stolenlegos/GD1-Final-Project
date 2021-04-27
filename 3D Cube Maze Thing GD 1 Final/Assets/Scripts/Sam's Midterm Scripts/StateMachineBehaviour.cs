@@ -22,6 +22,8 @@ public class StateMachineBehaviour : MonoBehaviour
 
   public float angleThreshold; // radius of cone
 
+  public int framesBetweenShots = 10;
+
   float player_dist; // player distance from cone
 
   float angleBetween; // player location in or out of radius of cone
@@ -127,7 +129,7 @@ public class StateMachineBehaviour : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-                ShotTimer = 10;
+                ShotTimer = framesBetweenShots; // 10;
             }
             else
             {
