@@ -57,7 +57,7 @@ public class CharacterMove : MonoBehaviour
         else
         {
             framesInAir += 1;
-            if (framesInAir >= 3)
+            if (framesInAir >= 4)
             {
                 grounded = false;
             }
