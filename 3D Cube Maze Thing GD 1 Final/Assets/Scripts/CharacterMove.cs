@@ -11,7 +11,7 @@ public class CharacterMove : MonoBehaviour
     [HideInInspector] public bool freeze = false;
     private float jumpVelocity = 10.0F;
     //[HideInInspector] public float gravityValue = -1000.0F;
-    private float gravityValue = -20.0F;
+    private float gravityValue = -40.0F;
     private bool grounded = true;
     private int framesInAir = 0;
     bool pause = false;
