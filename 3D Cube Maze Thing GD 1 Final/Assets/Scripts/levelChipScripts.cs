@@ -71,7 +71,7 @@ public class levelChipScripts : MonoBehaviour
         blueChip.SetActive(true); 
     }
     private void setPurpleActive() { 
-        blueActive = true; 
+        purpleActive = true; 
         purpleChip.SetActive(true); 
     }
     private void setYellowActive() { 
