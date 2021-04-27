@@ -52,7 +52,7 @@ public class playerChipScripts : MonoBehaviour
         pCBlue += 1;
       }
 
-      if (other.tag == "redPinr") {
+      if (other.tag == "redPine") {
         pCRed += 1;
       }
 
