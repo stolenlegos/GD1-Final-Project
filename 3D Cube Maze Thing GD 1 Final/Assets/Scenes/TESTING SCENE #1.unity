@@ -7165,19 +7165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 1
-=======
       value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.70710677
->>>>>>> parent of 60821ec... Revert "Merge branch 'main' of https://github.com/stolenlegos/GD1-Final-Project into main"
       objectReference: {fileID: 0}
     - target: {fileID: 2564190211988927029, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7822,7 +7814,7 @@ Transform:
   m_Children:
   - {fileID: 7991227584243569007}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6611013822090079578
 GameObject:
@@ -7947,15 +7939,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7221942902899139421, guid: 1a1d35da08afeee45ad0f0dab0db05e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7221942902899139421, guid: 1a1d35da08afeee45ad0f0dab0db05e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -103.63
+      value: -83.94
       objectReference: {fileID: 0}
     - target: {fileID: 7221942902899139421, guid: 1a1d35da08afeee45ad0f0dab0db05e4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7221942902899139421, guid: 1a1d35da08afeee45ad0f0dab0db05e4, type: 3}
       propertyPath: m_LocalRotation.w
