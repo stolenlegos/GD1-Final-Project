@@ -10,12 +10,9 @@ public class Slide : MonoBehaviour
      float speed;
      float num;
      bool reverse;
-     public int maxNum;
-     public float speedMultiplier;    
+     public int maxNum;   
  
      void Start() { 
-         if (speedMultiplier == 0)
-            speedMultiplier = 1;
          reverse = false;
          num = 0;  
      }
@@ -27,7 +24,7 @@ public class Slide : MonoBehaviour
             else 
                 reverse = true;   
         }
-        speed = speedMultiplier*num*Time.deltaTime/2;
+        speed = num*Time.deltaTime/2;
         transform.position = Vector3.Lerp(pointA.position, pointB.position, speed);
         if (!reverse) {
             num++; 
