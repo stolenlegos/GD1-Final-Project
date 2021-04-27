@@ -22,6 +22,11 @@ TagManager:
   - teleportSpot
   - plasma
   - Destroyer
+  - purplePine
+  - yellowPine
+  - redPine
+  - bluePine
+  - greenPine
   layers:
   - Default
   - TransparentFX
