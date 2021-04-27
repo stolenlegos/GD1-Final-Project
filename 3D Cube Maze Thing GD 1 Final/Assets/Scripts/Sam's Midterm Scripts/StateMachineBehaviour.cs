@@ -46,17 +46,17 @@ public class StateMachineBehaviour : MonoBehaviour
 
     bool MovingRight; // rotation animation during search
 
-    Quaternion startRotation; // starting rotation of turret
+   // Quaternion startRotation; // starting rotation of turret
 
     private int ShotTimer;
 
-    bool ResetPosition;
+   // bool ResetPosition;
 
     void Start()
     {
-        startRotation = transform.rotation;
+       // startRotation = transform.rotation;
 
-        ResetPosition = false;
+      //  ResetPosition = false;
     }
     void Update()
     {
@@ -170,12 +170,12 @@ public class StateMachineBehaviour : MonoBehaviour
         {
             ShotTimer = 0;
 
-            if(ResetPosition == true)
-            {
-                gameObject.transform.rotation = startRotation;
+            //if(ResetPosition == true)
+          //  {
+             //   gameObject.transform.rotation = startRotation;
 
-                ResetPosition = false;
-            }
+           //     ResetPosition = false;
+          //  }
 
             if (debugFlag2)
             {
@@ -206,7 +206,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
         if(state == States.Search)
         {
-            ResetPosition = true;
+           // ResetPosition = true;
 
             FrameTimer = FrameTimer - 1;
             if (debugFlag2)
