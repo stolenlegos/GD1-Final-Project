@@ -21,6 +21,7 @@ TagManager:
   - MT2
   - teleportSpot
   - plasma
+  - Destroyer
   layers:
   - Default
   - TransparentFX
