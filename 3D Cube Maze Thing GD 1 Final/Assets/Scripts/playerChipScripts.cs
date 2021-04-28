@@ -37,6 +37,9 @@ public class playerChipScripts : MonoBehaviour
       if (pCYellow >= 3) {
         chips.yellowWon = true;
       }
+      if (pCRed >= 2) {
+        Destroy(GameObject.Find("level3Entrance"));
+      }
     }
 
     void OnTriggerEnter (Collider other) {
