@@ -17,8 +17,6 @@ public class quicksand : MonoBehaviour
     //float scaleSum = 0.0f;
     float speedOrig;
     float gravityOrig;
-    [HideInInspector] public bool cancel = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +31,6 @@ public class quicksand : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-
-        if(cancel)
-        {
-            return;
-        }
-
         if(col.gameObject.CompareTag("Player"))
         {
             if(counter == 0)
