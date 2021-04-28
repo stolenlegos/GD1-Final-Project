@@ -8,6 +8,7 @@ public class rockScripts : MonoBehaviour
 	public float moveTimer;
     float resetTimer;
 	public float moveSpeed;
+
     void Start()
     {
         resetTimer = moveTimer; 
