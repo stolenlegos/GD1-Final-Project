@@ -52,14 +52,14 @@ public class CharacterMove : MonoBehaviour
         // fix this by "filtering" the value: only believe we're in the air if it says so 3 times in a row
         if (controller.isGrounded)
         {
-            Debug.Log("Grounded: True");
+            //Debug.Log("Grounded: True");
             framesInAir = 0;
             grounded = true;
         }
         else
         {
             framesInAir += 1;
-            Debug.Log("Grounded: False (" + framesInAir + " frames)");
+            //Debug.Log("Grounded: False (" + framesInAir + " frames)");
 
             if (framesInAir > 25)
             {
@@ -127,8 +127,8 @@ public class CharacterMove : MonoBehaviour
             // Debug.Log("Is button down? " + Input.GetButtonDown("Jump"));
             // Debug.Log("Is player grounded? " + grounded);
         }
-        Debug.Log("Current Y velocity:" + playerVelocity.y + "Gravity value " + gravityValue + "TimeDelta " + Time.deltaTime);
-
+        //Debug.Log("Current Y velocity:" + playerVelocity.y + "Gravity value " + gravityValue + "TimeDelta " + Time.deltaTime);
+        //Debug.Log("Speed " + speed);
         controller.Move(playerVelocity * Time.deltaTime);
 
         //Debug.Log("Gravity " + gravityValue + "Speed " + speed);

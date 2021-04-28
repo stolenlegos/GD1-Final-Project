@@ -28,6 +28,7 @@ TagManager:
   - bluePine
   - greenPine
   - BreakableWall
+  - yellowButton
   layers:
   - Default
   - TransparentFX
