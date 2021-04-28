@@ -13242,7 +13242,7 @@ MonoBehaviour:
   pointA: {fileID: 1821912703}
   pointB: {fileID: 1834391924}
   maxNum: 200
-  speedMultiplier: 1
+  speedMultiplier: 0.5
 --- !u!64 &1681321201
 MeshCollider:
   m_ObjectHideFlags: 0
