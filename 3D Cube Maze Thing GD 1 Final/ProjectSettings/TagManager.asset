@@ -27,6 +27,7 @@ TagManager:
   - redPine
   - bluePine
   - greenPine
+  - BreakableWall
   layers:
   - Default
   - TransparentFX

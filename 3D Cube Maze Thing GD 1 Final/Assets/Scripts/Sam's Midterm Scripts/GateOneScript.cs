@@ -5,7 +5,7 @@ using UnityEngine;
 public class GateOneScript : MonoBehaviour
 {
     public GameObject GateOne;
-    public Animator anim;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,6 @@ public class GateOneScript : MonoBehaviour
 
                 Destroy(GateOne);
 
-                Debug.Log("input");
             }
         }
     }

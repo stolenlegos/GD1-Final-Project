@@ -5,7 +5,7 @@ using UnityEngine;
 public class GateTwoScript : MonoBehaviour
 {
     public GameObject GateTwo;
-    public Animator anim;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
