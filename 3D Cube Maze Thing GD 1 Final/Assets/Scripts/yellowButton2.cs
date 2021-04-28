@@ -22,7 +22,7 @@ public class yellowButton2 : MonoBehaviour
     {
         BlueOrange = true;
         gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
-        origPos = cube2.transform.position;
+        //origPos = cube2.transform.position;
     }
 
     void Update()
@@ -39,6 +39,7 @@ public class yellowButton2 : MonoBehaviour
             //Debug.Log("Button press TRUE");
             quicksand.GetComponent<quicksand>().cancel = true;
             //Vector3 origPos = cube2.transform.position;
+            origPos = cube2.transform.position;
             cube2.transform.position = origPos + cube2.transform.forward * spacing;
             cube3.transform.position = origPos + cube2.transform.forward * 2.0f * spacing;
             cube4.transform.position = origPos + cube2.transform.forward * 3.0f * spacing;

@@ -14,7 +14,7 @@ public class yellowButton : MonoBehaviour
     {
         BlueOrange = true;
         gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
-        origPos = dustStorm.transform.position;
+        //origPos = dustStorm.transform.position;
     }
 
     void Update()
@@ -28,6 +28,7 @@ public class yellowButton : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 1, 1);
             BlueOrange = false;
+            origPos = dustStorm.transform.position;
             dustStorm.transform.position = origPos + dustStorm.transform.up * 5.0f;
         }
         else if (Input.GetKeyDown(KeyCode.E) && !BlueOrange && triggerActive)
