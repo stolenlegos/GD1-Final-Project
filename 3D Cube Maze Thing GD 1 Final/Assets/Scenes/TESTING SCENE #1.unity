@@ -9701,7 +9701,7 @@ MonoBehaviour:
   cube6: {fileID: 1195759551}
   cube7: {fileID: 597613213}
   cube8: {fileID: 674093544}
-  spacing: 50
+  spacing: 5
 --- !u!65 &1221836794
 BoxCollider:
   m_ObjectHideFlags: 0
