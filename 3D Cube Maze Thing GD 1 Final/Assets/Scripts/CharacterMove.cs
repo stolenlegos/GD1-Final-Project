@@ -9,7 +9,7 @@ public class CharacterMove : MonoBehaviour
     public float ratio = 3.0F; // ratio of run to walk speeds
     public float rotateSpeed = 1.0F;
     [HideInInspector] public bool freeze = false;
-    private float jumpVelocity = 10.0F;
+    public float jumpVelocity = 10.0F;
     //[HideInInspector] public float gravityValue = -1000.0F;
     private float gravityValue = -40.0F;
     private bool grounded = true;
@@ -55,15 +55,17 @@ public class CharacterMove : MonoBehaviour
             //Debug.Log("Grounded: True");
             framesInAir = 0;
             grounded = true;
+            //Debug.Log("Grounded, framesInAir " + framesInAir);
         }
         else
         {
             framesInAir += 1;
-            //Debug.Log("Grounded: False (" + framesInAir + " frames)");
+            //Debug.Log("Grounded False (" + framesInAir + " frames)");
 
-            if (framesInAir > 25)
+            if (framesInAir > 25) // can increase even more (~40) if needed
             {
                 grounded = false;
+                //Debug.Log("GROUNDED FALSE, " + "framesInAir " + framesInAir);
             }
         }
 
