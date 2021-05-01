@@ -78,7 +78,7 @@ public class CharacterMove : MonoBehaviour
         // Rotate around y - axis
         if (!pause)
         {
-            gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed / 5, 0);
+            gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed / 8, 0);
             gameObject.transform.Rotate(0, Input.GetAxis("LeftRight") * rotateSpeed / 10, 0);
         }
 
