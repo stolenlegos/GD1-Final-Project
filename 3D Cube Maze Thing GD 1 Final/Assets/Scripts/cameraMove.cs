@@ -41,8 +41,8 @@ public class cameraMove : MonoBehaviour
         // Rotate around x - axis
 
         tempAngle = gameObject.transform.eulerAngles.x;
-        tempAngle2 = tempAngle + Input.GetAxis("Mouse Y") * rotateSpeed * -1;
-        tempAngle3 = tempAngle + Input.GetAxis("FwdBack") * rotateSpeed / 2 * -1;
+        tempAngle2 = tempAngle + Input.GetAxis("Mouse Y") * rotateSpeed / 10 * -1;
+        tempAngle3 = tempAngle + Input.GetAxis("FwdBack") * rotateSpeed / 10 * -1;
 
         //Debug.Log("tempAngle " + tempAngle + " tempAngle2 " + tempAngle2);
 
@@ -70,7 +70,7 @@ public class cameraMove : MonoBehaviour
         {
             if(!pause)
             {
-                gameObject.transform.Rotate(Input.GetAxis("Mouse Y") * rotateSpeed * -1, 0, 0);
+                gameObject.transform.Rotate(Input.GetAxis("Mouse Y") * rotateSpeed / 10 * -1, 0, 0);
                 gameObject.transform.Rotate(Input.GetAxis("FwdBack") * rotateSpeed / 10 * -1, 0, 0);
             }
         }

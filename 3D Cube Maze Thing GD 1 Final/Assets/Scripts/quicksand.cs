@@ -17,6 +17,7 @@ public class quicksand : MonoBehaviour
     //float scaleSum = 0.0f;
     float speedOrig;
     float gravityOrig;
+    float jumpOrig;
     [HideInInspector] public bool cancel = false;
 
     // Start is called before the first frame update
@@ -48,6 +49,8 @@ public class quicksand : MonoBehaviour
                 //Debug.Log("Gravity " + col.gameObject.GetComponent<CharacterMove>().gravityValue);
                 speedOrig = col.gameObject.GetComponent<CharacterMove>().speed;
                 col.gameObject.GetComponent<CharacterMove>().speed *= 0.5f;
+                jumpOrig = col.gameObject.GetComponent<CharacterMove>().jumpVelocity;
+                col.gameObject.GetComponent<CharacterMove>().jumpVelocity = 0.0f;
                 //Debug.Log("Speed " + col.gameObject.GetComponent<CharacterMove>().speed);
                 //yellowOrig = yellow.transform;
                 yellowOrigVec = yellow.transform.position;
@@ -100,12 +103,10 @@ public class quicksand : MonoBehaviour
 
                 //col.gameObject.GetComponent<CharacterMove>().gravityValue = gravityOrig;
                 col.gameObject.GetComponent<CharacterMove>().speed = speedOrig;
-
+                col.gameObject.GetComponent<CharacterMove>().jumpVelocity = jumpOrig;
 
                 counter = 0;
                 counter2 = 0;
-
-
             }
         }
     }
