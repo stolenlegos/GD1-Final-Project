@@ -24,6 +24,7 @@ public class levelChipScripts : MonoBehaviour
     public GameObject redChip;
     private bool whiteActive;
     public GameObject whiteWall;
+    public GameObject island; 
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class levelChipScripts : MonoBehaviour
         yellowChip.SetActive(false);
         purpleChip.SetActive(false);
         redChip.SetActive(false);
+        island.SetActive(false);
         greenWon = false;
         greenActive = false;
         blueWon = false;
@@ -86,5 +88,6 @@ public class levelChipScripts : MonoBehaviour
     private void openExit() {
         whiteActive = false;
         whiteWall.SetActive(false);
+        island.SetActive(true);
     }
 }
