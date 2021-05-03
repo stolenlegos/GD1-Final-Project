@@ -13,12 +13,16 @@ public class TeslaButtons : MonoBehaviour
   public GameObject[] BWButtons;
   public GameObject[] BlackLightnings;
   public GameObject[] WhiteLightnings;
+  public GameObject finalButton;
+  public GameObject[] finalLightnings;
   public bool BlackWhite; //true is black false is White
   public bool BlueOrange; //true is blue false is orange
   public bool GreenRed; //true is red false is green
+  public bool final; //true is on false is off
   public bool RGTriggerActive;
   public bool BOTriggerActive;
   public bool BWTriggerActive;
+  public bool finalTriggerActive;
 
     void Start()
     {
@@ -45,6 +49,10 @@ public class TeslaButtons : MonoBehaviour
       foreach (GameObject BWButton in BWButtons) {
         BWButton.GetComponent<Renderer>().material.color = Color.black;
       }
+
+      finalLightnings = GameObject.FindGameObjectsWithTag("TeslaFINAL");
+      final = true;
+      finalButton.GetComponent<Renderer>().material.color = Color.black;
     }
 
     void Update() {
@@ -55,6 +63,7 @@ public class TeslaButtons : MonoBehaviour
       stopOrange();
       stopBlack();
       stopWhite();
+      stopFinal();
     }
 
     void stopRed() {
@@ -129,6 +138,18 @@ public class TeslaButtons : MonoBehaviour
       }
     }
 
+    void stopFinal() {
+      if (!final) {
+        foreach (GameObject finalLightning in finalLightnings) {
+          finalLightning.SetActive(false);
+        }
+      } else {
+        foreach (GameObject finalLightning in finalLightnings) {
+          finalLightning.SetActive(true);
+        }
+      }
+    }
+
     void ButtonActive() {
       if (Input.GetKeyDown(KeyCode.E) && GreenRed && RGTriggerActive) {
         foreach (GameObject RGButton in RGButtons) {
@@ -168,6 +189,14 @@ public class TeslaButtons : MonoBehaviour
         }
         BlackWhite = true;
       }
+
+      if (Input.GetKeyDown(KeyCode.E) && final && finalTriggerActive) {
+        finalButton.GetComponent<Renderer>().material.color = Color.white;
+        final = false;
+      } else if (Input.GetKeyDown(KeyCode.E) && !final && finalTriggerActive) {
+        finalButton.GetComponent<Renderer>().material.color = Color.black;
+        final = true;
+      }
     }
 
     void OnTriggerEnter(Collider other) {
@@ -182,6 +211,10 @@ public class TeslaButtons : MonoBehaviour
       if (other.tag == "TeslaButtonBW") {
         BWTriggerActive = true;
       }
+
+      if (other.tag == "TeslaFinalButton") {
+        finalTriggerActive = true;
+      }
     }
 
     void OnTriggerExit(Collider other) {
@@ -195,6 +228,10 @@ public class TeslaButtons : MonoBehaviour
 
       if (other.tag == "TeslaButtonBW") {
         BWTriggerActive = false;
+      }
+
+      if (other.tag == "TeslaFinalButton") {
+        finalTriggerActive = false;
       }
     }
 }

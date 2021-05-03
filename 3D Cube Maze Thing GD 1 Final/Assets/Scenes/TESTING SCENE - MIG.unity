@@ -157,6 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pankoPrefab: {fileID: 3428902650144666866, guid: 72bba468be3b9a542adefbfb6476a14e, type: 3}
   purpleMaze: {fileID: 1385284423}
+--- !u!1 &847072202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3310496423698688491, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
+  m_PrefabInstance: {fileID: 2664136412720324551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021835894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2664136413729465777, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
@@ -169,6 +174,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2201757002505515370, guid: e773128037c322e448d5deb7f98cc351, type: 3}
+      propertyPath: finalButton
+      value: 
+      objectReference: {fileID: 847072202}
     - target: {fileID: 2639609504305930747, guid: e773128037c322e448d5deb7f98cc351, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -469,6 +478,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 482725176}
+    - target: {fileID: 3310496423698688491, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
+      propertyPath: m_Name
+      value: TeslaFinalButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3543315372169088158, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.41532844
