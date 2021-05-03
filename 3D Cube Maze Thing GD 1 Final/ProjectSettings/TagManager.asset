@@ -30,6 +30,8 @@ TagManager:
   - BreakableWall
   - Slippery
   - onPurple
+  - TeslaFINAL
+  - TeslaFinalButton
   layers:
   - Default
   - TransparentFX

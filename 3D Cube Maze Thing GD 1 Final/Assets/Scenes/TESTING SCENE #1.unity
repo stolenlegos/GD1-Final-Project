@@ -10254,12 +10254,16 @@ MonoBehaviour:
   BWButtons: []
   BlackLightnings: []
   WhiteLightnings: []
+  finalButton: {fileID: 2564190213121546753}
+  finalLightnings: []
   BlackWhite: 0
   BlueOrange: 0
   GreenRed: 0
+  final: 0
   RGTriggerActive: 0
   BOTriggerActive: 0
   BWTriggerActive: 0
+  finalTriggerActive: 0
 --- !u!114 &1123868197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20592,6 +20596,10 @@ PrefabInstance:
       propertyPath: m_Range
       value: 1.53
       objectReference: {fileID: 0}
+    - target: {fileID: 406351563167954921, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+      propertyPath: m_Name
+      value: TeslaFinalButton
+      objectReference: {fileID: 0}
     - target: {fileID: 580519094247918869, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
       propertyPath: m_TagString
       value: purplePine
@@ -21053,6 +21061,11 @@ GameObject:
 --- !u!1 &2564190213121546752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 912666801676734128, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+  m_PrefabInstance: {fileID: 2564190213121546747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2564190213121546753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 406351563167954921, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
   m_PrefabInstance: {fileID: 2564190213121546747}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2575232464461990671
