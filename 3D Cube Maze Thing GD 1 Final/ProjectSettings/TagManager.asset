@@ -28,6 +28,8 @@ TagManager:
   - bluePine
   - greenPine
   - BreakableWall
+  - Slippery
+  - onPurple
   layers:
   - Default
   - TransparentFX

@@ -143,6 +143,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2885601494298730296, guid: e773128037c322e448d5deb7f98cc351, type: 3}
   m_PrefabInstance: {fileID: 1366032168}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &482725177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482725175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe041a449b94d41a598332c8f36607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pankoPrefab: {fileID: 3428902650144666866, guid: 72bba468be3b9a542adefbfb6476a14e, type: 3}
+  purpleMaze: {fileID: 1385284423}
 --- !u!1 &1021835894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2664136413729465777, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
@@ -245,6 +259,11 @@ PrefabInstance:
       objectReference: {fileID: 1495134093}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e773128037c322e448d5deb7f98cc351, type: 3}
+--- !u!1 &1385284423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2664136412772028594, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}
+  m_PrefabInstance: {fileID: 2664136412720324551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1495134093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2664136412034314314, guid: a700ace24269aa34bb3001bbaf8af26e, type: 3}

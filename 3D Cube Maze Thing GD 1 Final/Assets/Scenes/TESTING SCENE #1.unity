@@ -10295,6 +10295,20 @@ MonoBehaviour:
   pCBlue: 0
   pCRed: 0
   pCYellow: 0
+--- !u!114 &1123868199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123868194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfe041a449b94d41a598332c8f36607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pankoPrefab: {fileID: 3428902650144666866, guid: 72bba468be3b9a542adefbfb6476a14e, type: 3}
+  purpleMaze: {fileID: 2564190213121546752}
 --- !u!4 &1123868200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7221942902899139421, guid: 1a1d35da08afeee45ad0f0dab0db05e4, type: 3}
@@ -21034,6 +21048,11 @@ GameObject:
 --- !u!1 &2564190213121546751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 912666801568562099, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
+  m_PrefabInstance: {fileID: 2564190213121546747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2564190213121546752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 912666801676734128, guid: 39459db115ab27343b75a4d4bf87f3fa, type: 3}
   m_PrefabInstance: {fileID: 2564190213121546747}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2575232464461990671
