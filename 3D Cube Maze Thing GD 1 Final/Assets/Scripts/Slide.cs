@@ -14,10 +14,10 @@ public class Slide : MonoBehaviour
      public float speedMultiplier;    
  
      void Start() { 
-         if (speedMultiplier == 0)
+        if (speedMultiplier == 0)
             speedMultiplier = 1;
-         reverse = false;
-         num = 0;  
+        reverse = false;
+        num = 0;  
      }
      
      void FixedUpdate () {
@@ -32,6 +32,5 @@ public class Slide : MonoBehaviour
         if (!reverse) {
             num++; 
         } else num--; 
-
     }
 }

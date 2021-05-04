@@ -15,6 +15,10 @@ public class changeScene : MonoBehaviour {
     public void loadCredits() { 
         SceneManager.LoadScene("credits"); 
     }
+
+    public void loadControls() { 
+        SceneManager.LoadScene("controls"); 
+    }
     public void quit() {
         Application.Quit();
     }
