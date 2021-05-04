@@ -91,9 +91,11 @@ public class playerTriggerScripts : MonoBehaviour
             portalSpotUI.SetActive(true);
             spotCoordinates = gameObject.transform.position;
         }
-        //if (other.name == "planeBarrier") {
-        //    lavaPort();
-        //}
+        if (other.name == "scaleTrigger") {
+            player.transform.localScale += new Vector3(3f,3f,3f);
+            GameObject.Find("headLamp").SetActive(false);
+            mainCamera.transform.position = GameObject.Find("cameraTeleport").transform.position;
+        }
     }
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("portalSpot")) {
