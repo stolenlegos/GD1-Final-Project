@@ -33,6 +33,5 @@ public class slideOnce : MonoBehaviour
         num = 0; 
         oppositeButton.GetComponent<slideOnce>().enabled = false;
         move = true;
-        print("codeReached");
     }
 }
