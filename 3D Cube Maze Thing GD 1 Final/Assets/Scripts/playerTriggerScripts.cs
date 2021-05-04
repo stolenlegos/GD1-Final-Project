@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class playerTriggerScripts : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class playerTriggerScripts : MonoBehaviour
     GameObject controlsUI;
     public bool prtActive;
     public bool spotActive;
+    public bool controlsActive; 
     public Transform teleportTarget; 
     public Transform lavaTarget;
     public GameObject player; 
@@ -19,6 +21,8 @@ public class playerTriggerScripts : MonoBehaviour
 
     void Start()
     {
+        spotActive = false;
+        controlsActive = false;
         portalRoomUI = GameObject.Find("portalRoomUI");
         portalSpotUI = GameObject.Find("portalSpotUI");
         controlsUI = GameObject.Find("controlsUI");
@@ -28,6 +32,7 @@ public class playerTriggerScripts : MonoBehaviour
         if (!spotActive) {
             portalSpotUI.SetActive(false);
         }
+        controlsUI.SetActive(false);
     }
     void Update()
     {
@@ -54,18 +59,31 @@ public class playerTriggerScripts : MonoBehaviour
                 cubeWorld.GetComponent<CubeRotationEdit>().dropPlayer();
             }
         }
+
+        if (!controlsActive && Input.GetKeyDown(KeyCode.X)) {
+                controlsUI.SetActive(true);
+                controlsActive = true;
+        } else if (controlsActive && Input.GetKeyDown(KeyCode.X)) {
+                controlsUI.SetActive(false);
+                controlsActive = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Main Menu"); 
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("portalRoomTrigger")) {
             if (prtActive) {
-                portalRoomUI.SetActive(false);
+                //portalRoomUI.SetActive(false);
                 prtActive = false;
-                controlsUI.SetActive(true);
+                //controlsUI.SetActive(true);
             } else {
-                portalRoomUI.SetActive(true);
+                //portalRoomUI.SetActive(true);
                 prtActive = true;
-                controlsUI.SetActive(false);
+                //controlsUI.SetActive(false);
             }
         }
         if (other.CompareTag("portalSpot")) {
@@ -94,7 +112,7 @@ public class playerTriggerScripts : MonoBehaviour
         player.transform.rotation = teleportTarget.transform.rotation;
         mainCamera.transform.rotation = teleportTarget.transform.rotation;
         prtActive = true;
-        portalRoomUI.SetActive(true);
+        //portalRoomUI.SetActive(true);
     }
 
     /*public void lavaPort() {  
